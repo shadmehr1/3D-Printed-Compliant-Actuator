@@ -206,7 +206,7 @@ The Shactuator's intelligent control is handled by the **ODrive S1 Controller**,
   <br>
   <em>Figure 13: The spaceing between the top surface of the onboard encoder and the face of the magnet should be 0.5 - 3mm for optimal position sensing.</em>
 </p>
-
+</p>
 During the testing and tuning phases, control was exclusively managed via the **ODrive Dashboard**. This intuitive graphical user interface allowed for direct setting of motor positions, velocities, or torques, eliminating the need for custom coding to conduct performance assessments.
 
 ### ODrive Tuning
@@ -235,12 +235,13 @@ Rigorous testing was conducted to characterize the Shactuator's performance acro
   <br>
   <em>Figure 15: Detailed motor torque calculations, including the derivation of the torque constant (kt) and the final actuator torque, incorporating an assumed 80% efficiency for the system.</em>
 </p>
+</p>
 
 * **Methodology:** The actuator's maximum torque output was assessed using a handheld force gauge at a marked distance from the actuator's rotation axis.
 * **Results:** In the low current limit stages, the actuator exhibited linear behavior, with actual torque closely aligning with the theoretical $T = (k_t)(I)$ relationship. However, from 15A and beyond, a noticeable deviation from the expected linear trend was observed, indicating some loss. This phenomenon is commonly attributed to material friction losses (e.g., from bearings or gear meshing) and heat generation, particularly at higher torques and currents, a finding consistent with [existing motor torque literature](https://www.controleng.ca/servosoft/SSHelp1033/source/MotorTorqueVsCurrent.htm).
 
 <p align="center">
-  <img src="MEDIA/MAX_TORQUE.gif" alt="Max Torque Test" width="700">
+  <img src="MEDIA/MAX_TORQUE.gif" alt="Max Torque Test" width="500">
   <br>
   <em>Figure 16: The actuator's maximum torque output was assessed using a handheld force gauge at a marked distance from the actuator's rotation axis. </em>
 </p>
@@ -276,7 +277,8 @@ Rigorous testing was conducted to characterize the Shactuator's performance acro
 
 ### Continuous Torque Test
 
-* **Methodology:** To assess the actuator's ability to sustain torque over time, a continuous torque test was devised. Given the motor's specified continuous current limit of 22A, which translates to approximately 10 ft-lbs from our torque graph, a 5lb dumbbell was attached to a weighted band. The Shactuator then performed a series of "robot curls" to evaluate its endurance under continuous load. It showed no signs of performance degredation after 1 minute of operation. NOTE: A house fan was used in this operation as a safety measure to stir the air.
+* **Methodology:** To assess the actuator's ability to sustain torque over time, a continuous torque test was devised. Given the motor's specified continuous current limit of 22A, which translates to approximately 10 ft-lbs from our torque graph, a 5lb dumbbell was attached to a weighted band. The Shactuator then performed a series of "robot curls" to evaluate its endurance under continuous load. It showed no signs of performance degredation after 1 minute of operation. <br>
+**NOTE**: A house fan was used in this operation as a safety measure to stir the air.
 
 ### Backlash Evaluation
 
@@ -290,7 +292,7 @@ Developing the Shactuator provided valuable insights and highlighted several cri
 
 During higher current testing, particularly above 30A, the desktop power supply used reached its upper capability limit. This constraint prevented me from fully characterizing the motor's performance at its highest operational currents and understanding its behavior under more extreme loads. Moving forward, a more robust power supply will be essential.
 
-### Material Strain
+### Design for Limit Testing
 
 An early design hurdle emerged at around 15A during torque tests: the PLA printed rod and the round actuator housing, secured by wood clamps, proved unable to maintain stability. This necessitated a quick pivot to reinforce the system. The original PLA rod was reprinted using wood, significantly improving stability for subsequent tests. That is how I landed at the design revision which I uploaded. This experience underscored the importance of material selection and robust mechanical fixturing, especially when pushing 3D printed components to their limits, and suggested potential friction and heat losses in the printed material itself at higher torques.
 
