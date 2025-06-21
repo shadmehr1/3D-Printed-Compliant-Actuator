@@ -113,32 +113,33 @@ The Shactuator consists of 4 main assemblies that slip together for streamlined 
   <br>
   <em>Figure 4: Exploded view of the Bearing Subassembly, highlighting the 75mm ID, 90mm OD bearing that supports the actuator's output shaft.</em>
 </p>
-**End Effector and Bearing:** This assembly forms the primary output of the actuator. It houses the output bearing and customizable end effector. Designed with various end effector versions, it facilitates rapid testing and minimizes potential sources of error. The default design allows for direct mounting of these end effectors.
-
+**End Effector and Bearing**: This assembly forms the primary output of the actuator. It houses the output bearing and customizable end effector. Designed with various end effector versions, it facilitates rapid testing and minimizes potential sources of error. The default design allows for direct mounting of these end effectors.
+<br>
     
 <p align="center">
   <img src="MEDIA/HOUSING.png" alt="Housing Assembly" width="800">
   <br>
   <em>Figure 5: The Housing Assembly, which functions as the ring gear and actuator shroud, showing its internal helical gear teeth and integrated cooling provisions, and #4-40 inserts.</em>
 </p>
-**Actuator Housing:** This critical component serves a dual purpose: it functions as the stationary **ring gear** for the planetary system and acts as a protective shroud for the entire internal assembly. Integrated holes provide passive cooling to dissipate heat generated during operation. I modified the structure to give firm clamping points (my initial testing was pushing the actuator to its ends, slipping from the clamps during limit testing).
-
+**Actuator Housing**: This critical component serves a dual purpose: it functions as the stationary **ring gear** for the planetary system and acts as a protective shroud for the entire internal assembly. Integrated holes provide passive cooling to dissipate heat generated during operation. I modified the structure to give firm clamping points (my initial testing was pushing the actuator to its ends, slipping from the clamps during limit testing).
+<br>
 
 <p align="center">
   <img src="MEDIA/CARRIER_ASSY.png" alt="Planet Carrier Subassembly" width="800">
   <br>
   <em>Figure 6: The Planet Carrier Subassembly, showing the arrangement of planet gears, 3x M5 dowel pins, and 3x 5mm ID, 16mm OD bearings, crucial for smooth planetary motion.</em>
 </p>
-**Planetary Carriers:** This subassembly houses the planet gears. It incorporates steel dowel pins and small roller bearings alongside the gears, ensuring smooth and efficient power transmission. 
-
+**Planetary Carriers**: This subassembly houses the planet gears. It incorporates steel dowel pins and small roller bearings alongside the gears, ensuring smooth and efficient power transmission. 
+<br>
 
 <p align="center">
   <img src="MEDIA/MOTOR_ASSY.png" alt="Motor Subassembly" width="800">
   <br>
   <em>Figure 7: The Motor Subassembly, illustrating the brushless motor, sun gear attachment, ODrive S1 controller, and the 6mm Neodymium magnet used for encoder feedback.</em>
 </p>
-**Motor Subassembly:** This assembly integrates the EaglePower brushless motor with the **sun gear**. The motor is securely attached to a back plate, which also provides mounting provisions for the ODrive S1 controller (and its onboard encoder). Precise positioning of the ODrive is essential to ensure optimal alignment with the onboard encoder and magnet for accurate position feedback.
-
+**Motor Subassembly**: This assembly integrates the EaglePower brushless motor with the **sun gear**. The motor is securely attached to a back plate, which also provides mounting provisions for the ODrive S1 controller (and its onboard encoder). Precise positioning of the ODrive is essential to ensure optimal alignment with the onboard encoder and magnet for accurate position feedback.
+<br>
+<br>
 The CAD models (STP files) for the Shactuator, including all assemblies and individual components, are attached to this repository. These models provide comprehensive details for replication, modification, or further development.
 
 ### Design Notes
