@@ -4,7 +4,7 @@
 A compact, high-performance open-source actuator for advanced robotics, designed and built to explore fundamental principles of electronics, motors, and gearboxes for applications like robotic locomotion.
 
 <p align="center">
-  <img src="MEDIA/7FTLB_COMPLIANCE.GIF" alt="Compliance at 7ft-lbs" width="600">
+  <img src="MEDIA/7FTLB_COMPLIANCE.gif" alt="Compliance at 7ft-lbs" width="600">
   <br>
   <em>Figure 1: The actuator's compliance is on display. This is the exact behavior you would want out of a joint in a robotic dog or humanoid .</em>
 </p>
