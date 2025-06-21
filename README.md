@@ -116,28 +116,28 @@ The SHACTUATOR consists of 4 main assemblies that slip together for streamlined 
 
 * **End Effector and Bearing:** This assembly forms the primary output of the actuator. It houses the output bearing and customizable end effector. Designed with various end effector versions, it facilitates rapid testing and minimizes potential sources of error. The default design allows for direct mounting of these end effectors.
     <p align="center">
-      <img src="MEDIA/BEARING_ASSY.png" alt="Bearing Subassembly" width="600">
+      <img src="MEDIA/BEARING_ASSY.png" alt="Bearing Subassembly" width="800">
       <br>
       <em>Figure 5: Exploded view of the Bearing Subassembly, highlighting the 75mm ID, 90mm OD bearing that supports the actuator's output shaft.</em>
     </p>
 
 * **Actuator Housing:** This critical component serves a dual purpose: it functions as the stationary **ring gear** for the planetary system and acts as a protective shroud for the entire internal assembly. Integrated holes provide passive cooling to dissipate heat generated during operation. I modified the structure to give firm clamping points (my initial testing was pushing the actuator to its ends, slipping from the clamps during limit testing)
     <p align="center">
-      <img src="MEDIA/HOUSING.png" alt="Housing Component" width="600">
+      <img src="MEDIA/HOUSING.png" alt="Housing Component" width="800">
       <br>
       <em>Figure 6: The Housing component, which functions as the ring gear and actuator shroud, showing its internal helical gear teeth and integrated cooling provisions.</em>
     </p>
 
 * **Planetary Carriers:** This subassembly houses the planet gears. It incorporates steel dowel pins and small roller bearings alongside the gears, ensuring smooth and efficient power transmission. A key assembly note is that you must add pause a pause to your 3D print program such that you can press fit the bearings in and allow for the print to continue around them.
     <p align="center">
-      <img src="MEDIA/CARRIER_ASSY.png" alt="Planet Carrier Subassembly" width="600">
+      <img src="MEDIA/CARRIER_ASSY.png" alt="Planet Carrier Subassembly" width="800">
       <br>
       <em>Figure 7: The Planet Carrier Subassembly, showing the arrangement of planet gears, 3x M5 dowel pins, and 3x 5mm ID, 16mm OD bearings, crucial for smooth planetary motion.</em>
     </p>
 
 * **Motor Subassembly:** This assembly integrates the EaglePower brushless motor with the **sun gear**. The motor is securely attached to a back plate, which also provides mounting provisions for the ODrive S1 controller. Precise positioning of the ODrive is essential to ensure optimal alignment with the onboard encoder and magnet for accurate position feedback.
     <p align="center">
-      <img src="MEDIA/MOTOR_ASSY.png" alt="Motor Subassembly" width="600">
+      <img src="MEDIA/MOTOR_ASSY.png" alt="Motor Subassembly" width="800">
       <br>
       <em>Figure 8: The Motor Subassembly, illustrating the brushless motor, sun gear attachment, ODrive S1 controller, and the 6mm Neodymium magnet used for encoder feedback.</em>
     </p>
@@ -163,7 +163,7 @@ The assembly process for the SHACTUATOR was significantly simplified by its modu
 *Key Assembly Note: Add pause a pause to your gear 3D print program such that you can press fit the bearings in and allow for the print to continue around the gear body.*
 
 <p align="center">
-  <img src="MEIDA/BEARING_PRINT.jpg" alt="Press Fit Bearings during 3D Print" width="600">
+  <img src="MEIDA/BEARING_PRINT.png" alt="Press Fit Bearings during 3D Print" width="600">
   <br>
   <em>Figure 9: Key Assembly Note: Press Fitting the radial bearings into the gears mid-print.
 .</em>
@@ -171,22 +171,22 @@ The assembly process for the SHACTUATOR was significantly simplified by its modu
 
 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
   <div style="text-align: center;">
-    <img src="MEDIA/ASSEMBLY_1.jpg" alt="Initial Assembly Phase" style="width: 100%; max-width: 400px; height: auto;">
+    <img src="MEDIA/ASSEMBLY_1.jpg" alt="Initial Assembly Phase" style="width: 100%; max-width: 200px; height: auto;">
     <br>
     <em>Figure 9: Initial assembly phase, showing the integration of the main bearing into the housing, highlighting the wooden rod used for stability during early tests.</em>
   </div>
   <div style="text-align: center;">
-    <img src="MEDIA/ASSEMBLY_2.jpg" alt="Planetary Carrier Insertion" style="width: 100%; max-width: 400px; height: auto;">
+    <img src="MEDIA/ASSEMBLY_2.jpg" alt="Planetary Carrier Insertion" style="width: 100%; max-width: 200px; height: auto;">
     <br>
     <em>Figure 10: Assembling the planetary carrier subassembly into the main housing, showcasing the helical planet gears.</em>
   </div>
   <div style="text-align: center;">
-    <img src="MEDIA/ASSEMBLY_3.jpg" alt="Actuator Assembly with Wooden Rod" style="width: 100%; max-width: 400px; height: auto;">
+    <img src="MEDIA/ASSEMBLY_3.jpg" alt="Actuator Assembly with Wooden Rod" style="width: 100%; max-width: 200px; height: auto;">
     <br>
     <em>Figure 11: The actuator assembly with the wooden rod fully integrated, demonstrating the early testing setup.</em>
   </div>
   <div style="text-align: center;">
-    <img src="MEDIA/ASSEMBLY_4.jpg" alt="Motor and ODrive Integration" style="width: 100%; max-width: 400px; height: auto;">
+    <img src="MEDIA/ASSEMBLY_4.jpg" alt="Motor and ODrive Integration" style="width: 100%; max-width: 200px; height: auto;">
     <br>
     <em>Figure 12: Integrating the motor and ODrive controller into the actuator housing, completing the core electromechanical assembly.</em>
   </div>
