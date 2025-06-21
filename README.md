@@ -5,7 +5,7 @@ A compact, high-performance open-source actuator for advanced robotics, designed
 
 
 <p align="center">
-  <img src="MEDIA/SHACTUATOR_EXPL.png" alt="SHACTUATOR Exploded View" width="1000">
+  <img src="MEDIA/SHACTUATOR_EXPL.png" alt="SHACTUATOR Exploded View" width="900">
   <br>
   <em>Figure 1: An exploded view of the SHACTUATOR, illustrating its main components and their arrangement.</em>
 </p>
@@ -71,7 +71,7 @@ When embarking on the design of a custom actuator, selecting the appropriate gea
 *Note: For the above table, a rating of 5 signifies an excellent performance or characteristic for that criterion.*
 
 I ultimately opted for a **Planetary gearbox system**. While Cycloidal and Harmonic drives offer superior efficiency and backlash characteristics, their increased design and printing complexity presented a significant hurdle for a proof-of-concept project. I wanted to move fast. My primary goal was to validate the overall actuator concept rather than delve into the intricacies of perfecting highly complex 3D-printed cycloidal or harmonic drives. Planetary gearboxes strike a favorable balance, offering sufficient efficiency and ease of fabrication, which was crucial for rapid prototyping.
-(The full trade is uploaded: 'DESIGN/Gearbox Trade.xlsx')
+(The full trade is uploaded: 'Gearbox Trade.xlsx')
 
 ### Gear Ratio Calculation
 
@@ -103,7 +103,7 @@ The SHACTUATOR integrates a select set of components, chosen for their performan
 The SHACTUATOR's mechanical design emphasizes modularity, enabling ease of assembly, maintenance, and potential future modifications. The entire actuator is ingeniously composed of four main assemblies, meticulously designed to slip together. This modular approach significantly streamlines the construction process and offers flexibility for iterating on specific components.
 
 <p align="center">
-  <img src="MEDIA/SHACTUATOR_ASSY.jpg" alt="SHACTUATOR Assembled View" width="700">
+  <img src="MEDIA/SHACTUATOR_ASSY.png" alt="SHACTUATOR Assembled View" width="700">
   <br>
   <em>Figure 4: The fully assembled SHACTUATOR, showcasing its compact form factor and integrated design.</em>
 </p>
@@ -116,28 +116,28 @@ The SHACTUATOR consists of 4 main assemblies that slip together for streamlined 
 
 * **End Effector and Bearing:** This assembly forms the primary output of the actuator. It houses the output bearing and customizable end effector. Designed with various end effector versions, it facilitates rapid testing and minimizes potential sources of error. The default design allows for direct mounting of these end effectors.
     <p align="center">
-      <img src="MEDIA/BEARING_ASSY.jpg" alt="Bearing Subassembly" width="600">
+      <img src="MEDIA/BEARING_ASSY.png" alt="Bearing Subassembly" width="600">
       <br>
       <em>Figure 5: Exploded view of the Bearing Subassembly, highlighting the 75mm ID, 90mm OD bearing that supports the actuator's output shaft.</em>
     </p>
 
 * **Actuator Housing:** This critical component serves a dual purpose: it functions as the stationary **ring gear** for the planetary system and acts as a protective shroud for the entire internal assembly. Integrated holes provide passive cooling to dissipate heat generated during operation. I modified the structure to give firm clamping points (my initial testing was pushing the actuator to its ends, slipping from the clamps during limit testing)
     <p align="center">
-      <img src="MEDIA/HOUSING.jpg" alt="Housing Component" width="600">
+      <img src="MEDIA/HOUSING.png" alt="Housing Component" width="600">
       <br>
       <em>Figure 6: The Housing component, which functions as the ring gear and actuator shroud, showing its internal helical gear teeth and integrated cooling provisions.</em>
     </p>
 
 * **Planetary Carriers:** This subassembly houses the planet gears. It incorporates steel dowel pins and small roller bearings alongside the gears, ensuring smooth and efficient power transmission. A key assembly note is that you must add pause a pause to your 3D print program such that you can press fit the bearings in and allow for the print to continue around them.
     <p align="center">
-      <img src="MEDIA/CARRIER_ASSY.jpg" alt="Planet Carrier Subassembly" width="600">
+      <img src="MEDIA/CARRIER_ASSY.png" alt="Planet Carrier Subassembly" width="600">
       <br>
       <em>Figure 7: The Planet Carrier Subassembly, showing the arrangement of planet gears, 3x M5 dowel pins, and 3x 5mm ID, 16mm OD bearings, crucial for smooth planetary motion.</em>
     </p>
 
 * **Motor Subassembly:** This assembly integrates the EaglePower brushless motor with the **sun gear**. The motor is securely attached to a back plate, which also provides mounting provisions for the ODrive S1 controller. Precise positioning of the ODrive is essential to ensure optimal alignment with the onboard encoder and magnet for accurate position feedback.
     <p align="center">
-      <img src="MEDIA/MOTOR_ASSY.jpg" alt="Motor Subassembly" width="600">
+      <img src="MEDIA/MOTOR_ASSY.png" alt="Motor Subassembly" width="600">
       <br>
       <em>Figure 8: The Motor Subassembly, illustrating the brushless motor, sun gear attachment, ODrive S1 controller, and the 6mm Neodymium magnet used for encoder feedback.</em>
     </p>
