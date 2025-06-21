@@ -1,10 +1,10 @@
 # 3D Printed Compliant Actuator
-(Referred to as *The Shactuator* in various remote regions of the world.)
+**Referred to as *The Shactuator* in select remote regions of the world.**
 
 A compact, high-performance open-source actuator for advanced robotics, designed and built to explore fundamental principles of electronics, motors, and gearboxes for applications like the humanoids and robotic dogs.
 
 <p align="center">
-  <img src="MEDIA/SHACTUATOR_EXPL.png" alt="Shactuator Exploded View" width="900">
+  <img src="MEDIA/SHACTUATOR_EXPL.png" alt="Shactuator Exploded View" width="1000">
   <br>
   <em>Figure 1: An exploded view of the Shactuator.</em>
 </p>
@@ -98,7 +98,7 @@ The Shactuator integrates a select set of components, chosen for their performan
 The Shactuator's mechanical design emphasizes modularity, enabling ease of assembly, maintenance, and potential future modifications. The entire actuator is ingeniously composed of four main assemblies, meticulously designed to slip together. This modular approach significantly streamlines the construction process and offers flexibility for iterating on specific components.
 
 <p align="center">
-  <img src="MEDIA/SHACTUATOR_ASSY.png" alt="Shactuator Assembled View" width="700">
+  <img src="MEDIA/SHACTUATOR_ASSY.png" alt="Shactuator Assembled View" width="900">
   <br>
   <em>Figure 3: The fully assembled Shactuator, showcasing its compact form factor and integrated design.</em>
 </p>
@@ -169,7 +169,7 @@ Utilizing a Bambu P1S to fabricate components brought both advantages and specif
 * **Lubricate Gears:** A critical design component is lube. It reduces friction and noise. The system which loses less energy to friction will in turn be more efficient. I made sure to generously apply Multi-Purpose Synthetic Grease to all gear interfaces.
 
 <p align="center">
-  <img src="MEDIA/GREASE.jpg" alt="Grease Application" width="400">
+  <img src="MEDIA/GREASE.jpg" alt="Grease Application" width="300">
   <br>
   <em>Figure 9: Key Assembly Note: Lubricate all gear interfaces to reduce friction and maintin higher system efficiencies.
 .</em>
@@ -180,19 +180,19 @@ Utilizing a Bambu P1S to fabricate components brought both advantages and specif
 The assembly process for the Shactuator was significantly simplified by its modular design, allowing for a logical and systematic integration of components.
 
 <p align="center">
-  <img src="MEDIA/ASSEMBLY_1.jpg" alt="Initial Assembly Phase" width="500">
+  <img src="MEDIA/ASSEMBLY_1.jpg" alt="Initial Assembly Phase" width="400">
   <br>
   <em>Figure 10: Initial assembly phase, with a 1" OD wooden rod used for later stage tests.</em>
 </p>
 
 <p align="center">
-  <img src="MEDIA/ASSEMBLY_2.jpg" alt="Planetary Carrier Insertion" width="500">
+  <img src="MEDIA/ASSEMBLY_2.jpg" alt="Planetary Carrier Insertion" width="400">
   <br>
   <em>Figure 11: Assembling the planetary carrier subassembly into the main housing, showcasing the helical planet gears.</em>
 </p>
 
 <p align="center">
-  <img src="MEDIA/ASSEMBLY_3.jpg" alt="Actuator Assembly with Wooden Rod" width="500">
+  <img src="MEDIA/ASSEMBLY_3.jpg" alt="Actuator Assembly with Wooden Rod" width="400">
   <br>
   <em>Figure 12: The actuator assembly with the wooden rod fully integrated, demonstrating the early testing setup.</em>
 </p>
@@ -218,7 +218,7 @@ Optimal performance of the Shactuator was achieved through careful tuning of the
 * **Velocity Integrator Gain:** 0.05 (Nm/s)/(rev/s)
 
 <p align="center">
-  <img src="MEDIA/TUNE_ODRIVE.png" alt="ODrive Dashboard Tuning" width="700">
+  <img src="MEDIA/TUNE_ODRIVE.png" alt="ODrive Dashboard Tuning" width="600">
   <br>
   <em>Figure 14: Screenshot of the ODrive Dashboard showing the configured PID gain values (Position, Velocity, and Velocity Integrator Gain) and the resultant position, velocity, and current damping curves during testing.</em>
 </p>
@@ -231,9 +231,9 @@ Rigorous testing was conducted to characterize the Shactuator's performance acro
 * **Expected:** Using the motor speed and current, I used a given formula found in a textbook to calculate the expected torque of brushless DC motors. Thus, at 20A, I was expecting **11.68 ft-lbs**.
 
 <p align="center">
-  <img src="MEDIA/MOTOR_TORQUE_CALC.JPEG" alt="Motor Torque Calculation" width="600">
+  <img src="MEDIA/MOTOR_TORQUE_CALC.JPEG" alt="Motor Torque Calculation" width="500">
   <br>
-  <em>Figure 16: Detailed motor torque calculations, including the derivation of the torque constant (kt) and the final actuator torque, incorporating an assumed 80% efficiency for the system.</em>
+  <em>Figure 15: Detailed motor torque calculations, including the derivation of the torque constant (kt) and the final actuator torque, incorporating an assumed 80% efficiency for the system.</em>
 </p>
 
 * **Methodology:** The actuator's maximum torque output was assessed using a handheld force gauge at a marked distance from the actuator's rotation axis.
@@ -242,13 +242,13 @@ Rigorous testing was conducted to characterize the Shactuator's performance acro
 <p align="center">
   <img src="MEDIA/MAX_TORQUE.gif" alt="Max Torque Test" width="700">
   <br>
-  <em>Figure 15: The actuator's maximum torque output was assessed using a handheld force gauge at a marked distance from the actuator's rotation axis. </em>
+  <em>Figure 16: The actuator's maximum torque output was assessed using a handheld force gauge at a marked distance from the actuator's rotation axis. </em>
 </p>
 
 <p align="center">
-  <img src="MEDIA/TORQUE_RESULTS.png" alt="Torque vs Current Limit" width="700">
+  <img src="MEDIA/TORQUE_RESULTS.png" alt="Torque vs Current Limit" width="500">
   <br>
-  <em>Figure 15: Torque vs Current Limit graph, comparing measured performance against projected linear behavior, highlighting the onset of losses at higher current thresholds, consistent with [existing motor torque literature](https://www.controleng.ca/servosoft/SSHelp1033/source/MotorTorqueVsCurrent.htm).</em>
+  <em>Figure 17: Torque vs Current Limit graph, comparing measured performance against projected linear behavior, highlighting the onset of losses at higher current thresholds, consistent with [existing motor torque literature](https://www.controleng.ca/servosoft/SSHelp1033/source/MotorTorqueVsCurrent.htm).</em>
 </p>
 
 
@@ -260,13 +260,13 @@ Rigorous testing was conducted to characterize the Shactuator's performance acro
 <p align="center">
   <img src="MEDIA/7FTLB_COMPLIANCE.gif" alt="Compliance at 7ft-lbs" width="600">
   <br>
-  <em>Figure 1: The actuator's compliance when set to exert 7ft-lbs.</em>
+  <em>Figure 18: The actuator's compliance when set to exert 7ft-lbs.</em>
 </p>
 
 <p align="center">
   <img src="MEDIA/15FTLB_COMPLIANCE.gif" alt="Compliance at 7ft-lbs" width="600">
   <br>
-  <em>Figure 1: The Shactuator's compliance when set to exert 15ft-lbs.</em>
+  <em>Figure 19: The Shactuator's compliance when set to exert 15ft-lbs.</em>
 </p>
 
 ### Speed Tests
@@ -295,9 +295,9 @@ During higher current testing, particularly above 30A, the desktop power supply 
 An early design hurdle emerged at around 15A during torque tests: the PLA printed rod and the round actuator housing, secured by wood clamps, proved unable to maintain stability. This necessitated a quick pivot to reinforce the system. The original PLA rod was reprinted using wood, significantly improving stability for subsequent tests. That is how I landed at the design revision which I uploaded. This experience underscored the importance of material selection and robust mechanical fixturing, especially when pushing 3D printed components to their limits, and suggested potential friction and heat losses in the printed material itself at higher torques.
 
 <p align="center">
-  <img src="MEDIA/VICE_FAIL.gif" alt="Vice-Fail" width="600">
+  <img src="MEDIA/VICE_FAIL.gif" alt="Vice-Fail" width="400">
   <br>
-  <em>Figure 1: Clamps slipping and failing when I using an earlier revision of the Shactuator. I redesigned the end effector and the housing to accomodate for high load testing.</em>
+  <em>Figure 20: Clamps slipping and failing when I using an earlier revision of the Shactuator. I redesigned the end effector and the housing to accomodate for high load testing.</em>
 </p>
 
 ## Future Improvements
