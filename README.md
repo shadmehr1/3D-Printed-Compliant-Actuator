@@ -167,7 +167,7 @@ Utilizing FDM 3D printing for the SHACTUATOR's components brought both advantage
 The assembly process for the SHACTUATOR was significantly simplified by its modular design, allowing for a logical and systematic integration of components.
 
 <p align="center">
-  <img src="MEIDA/ASSEMBLY_1.jpg" alt="Initial Assembly Phase" width="500">
+  <img src="MEDIA/ASSEMBLY_1.jpg" alt="Initial Assembly Phase" width="500">
   <br>
   <em>Figure 9: Initial assembly phase, showing the integration of the main bearing into the housing, highlighting the wooden rod used for stability during early tests.</em>
 </p>
@@ -186,12 +186,12 @@ The assembly process for the SHACTUATOR was significantly simplified by its modu
 
 ## Electronics & Control Setup
 
-The SHACTUATOR's intelligent control is handled by the **ODrive S1 Controller**, which precisely manages the EaglePower brushless motor. For position feedback, the motor leverages its onboard encoder in conjunction with a 6mm Neodymium magnet. Crucially, the ODrive Technical Specification recommends maintaining a spacing of **0.5 to 3mm** between the top surface of the encoder IC and the magnet for optimal performance and signal integrity.
+The SHACTUATOR's intelligent control is handled by the **ODrive S1 Controller**, which precisely manages the EaglePower brushless motor. For position feedback, the motor leverages its onboard encoder in conjunction with a 6mm Neodymium magnet. Crucially, the [ODrive Technical Specification]([URL](https://docs.odriverobotics.com/v/latest/articles/magnetic-encoders.html#design-consideration)) recommends maintaining a spacing of **0.5 to 3mm** between the top surface of the encoder IC and the magnet for optimal performance and signal integrity.
 
 <p align="center">
-  <img src="MEDIA/image_5c3c82.png" alt="Encoder Magnet Spacing" width="500">
+  <img src="MEDIA/MAGNET_DISTANCE.png" alt="Encoder Magnet Spacing" width="500">
   <br>
-  <em>Figure 13: Diagram illustrating the recommended spacing (0.5 - 3mm) between the ODrive encoder and the magnet for optimal position sensing.</em>
+  <em>Figure 13: The spaceing between the top surface of the onboard encoder and the face of the magnet should be 0.5 - 3mm for optimal position sensing.</em>
 </p>
 
 During the testing and tuning phases, control was exclusively managed via the **ODrive Dashboard**. This intuitive graphical user interface allowed for direct setting of motor positions, velocities, or torques, eliminating the need for custom coding to conduct performance assessments.
@@ -215,21 +215,29 @@ Optimal performance of the SHACTUATOR was achieved through careful tuning of the
 Rigorous testing was conducted to characterize the SHACTUATOR's performance across various parameters, providing valuable insights into its capabilities and limitations.
 
 ### Max Torque Test
-
-* **Methodology:** The actuator's maximum torque output was assessed using a handheld force gauge at a marked distance from the actuator's rotation axis.
-* **Results:** In the low current limit stages, the actuator exhibited linear behavior, with actual torque closely aligning with the theoretical $T = (k_t)(I)$ relationship. However, from 15A and beyond, a noticeable deviation from the expected linear trend was observed, indicating some loss. This phenomenon is commonly attributed to material friction losses (e.g., from bearings or gear meshing) and heat generation, particularly at higher torques and currents, a finding consistent with existing motor torque literature. Our final actuator torque was calculated to be **11.68 ft-lbs**.
-
-<p align="center">
-  <img src="MEDIA/TORQUE_RESULTS.png" alt="Torque vs Current Limit" width="700">
-  <br>
-  <em>Figure 15: Torque vs Current Limit graph, comparing measured performance against projected linear behavior, highlighting the onset of losses at higher current thresholds.</em>
-</p>
+* **Expected:** Using the motor speed and current, I used a given formula found in a textbook to calculate the expected torque of brushless DC motors. Thus, at 20A, I was expecting **11.68 ft-lbs**.
 
 <p align="center">
   <img src="MEDIA/MOTOR_TORQUE_CALC.JPEG" alt="Motor Torque Calculation" width="600">
   <br>
   <em>Figure 16: Detailed motor torque calculations, including the derivation of the torque constant (kt) and the final actuator torque, incorporating an assumed 80% efficiency for the system.</em>
 </p>
+
+* **Methodology:** The actuator's maximum torque output was assessed using a handheld force gauge at a marked distance from the actuator's rotation axis.
+* **Results:** In the low current limit stages, the actuator exhibited linear behavior, with actual torque closely aligning with the theoretical $T = (k_t)(I)$ relationship. However, from 15A and beyond, a noticeable deviation from the expected linear trend was observed, indicating some loss. This phenomenon is commonly attributed to material friction losses (e.g., from bearings or gear meshing) and heat generation, particularly at higher torques and currents, a finding consistent with [existing motor torque literature]([URL](https://www.controleng.ca/servosoft/SSHelp1033/source/MotorTorqueVsCurrent.htm)).
+
+<p align="center">
+  <img src="MEDIA/MAX_TORQUE.gif" alt="Max Torque Test" width="700">
+  <br>
+  <em>Figure 15: The actuator's maximum torque output was assessed using a handheld force gauge at a marked distance from the actuator's rotation axis. </em>
+</p>
+
+<p align="center">
+  <img src="MEDIA/TORQUE_RESULTS.png" alt="Torque vs Current Limit" width="700">
+  <br>
+  <em>Figure 15: Torque vs Current Limit graph, comparing measured performance against projected linear behavior, highlighting the onset of losses at higher current thresholds, consistent with [existing motor torque literature]([URL](https://www.controleng.ca/servosoft/SSHelp1033/source/MotorTorqueVsCurrent.htm)).</em>
+</p>
+
 
 ### Compliance & Backdrivability
 
