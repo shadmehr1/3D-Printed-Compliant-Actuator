@@ -83,20 +83,20 @@ My planetary gearbox was meticulously designed to achieve an **8:1 gear ratio**,
 
 ## Core Components & Bill of Materials
 
-The SHACTUATOR integrates a select set of components, chosen for their performance, availability, and suitability for the project's goals. The full Bill of Materials (BOM) is detailed below, including component names, quantities, costs, and sourcing information.
+## Core Components & Bill of Materials
 
-* **Encoder Magnet** (Count: 1): Sourced from [DigiKey](https://www.digikey.com/en/products/detail/radial-magnets-inc/9049/6030786).
-* **EaglePower 8308 KV90 Brushless Motor** (Count: 1): Designed for agricultural drones, this motor was selected for its low profile, relatively high performance, and competitive price ($69.09 from AliExpress).
-    * **Specifications:** Size: 3.62” Dia, 1.12” height; 0.741 lbs; Max Continuous Current 22A; 20 pole pairs.
-* **ODrive S1 Controller** (Count: 1): The brain of the operation, this advanced motor controller is essential for precise BLDC motor commutation and control ($169.73 from [ODrive Robotics](https://shop.odriverobotics.com/products/odrive-s1)).
-* **OD 95mm ball bearing** (Count: 1): $15.79 from Ucxcell.
-* **4-40 Keenserts** (Count: 30): $10.99 from Amazon.
-* **M5x30 (h7) steel dowel pin** (Count: 1 pack (3)): $11.89 from Amazon/Misumi.
-* **625ZZ bearing** (Count: 1 pack (3)): $5.99 from Ucxcell.
-* **M2.5x4 hex cap screw** (Count: 4)
-* **#4-40 Flat Head Screw** (various lengths): 1/2" (23 count), 1 1/8" (3 count), 5/8" (4 count).
+The SHACTUATOR integrates a select set of components, chosen for their performance, availability, and suitability for the project's goals.
+
+* **EaglePower 8308 KV90 Brushless Motor:** Designed for agricultural drones, this motor was a strategic choice due to its compelling balance of characteristics. It offers a **low profile** ideal for compact actuator designs, delivers **relatively high performance** suitable for dynamic robotic applications, and comes at a **good price** ($69.09 from AliExpress), making it an accessible option for a custom build.
+    * **Specifications:** Size: 3.62” Dia, 1.12” height; 0.741 lbs; Max Continuous Current 22A; 20 pole pairs. KV90: means it can rotate at an RPM of '90 * Voltage Provided'
+* **ODrive S1 Controller** (Count: 1): This advanced motor controller is the brains of the operation, chosen for its robust capabilities in precisely managing brushless DC motor commutation and control ($169.73 from ODrive Robotics). Its sophisticated control algorithms enable the high performance and compliant behavior demonstrated by the SHACTUATOR.
+* **Encoder Magnet** (Count: 1): Essential for precise position feedback, this Neodymium magnet is designed to work seamlessly with the ODrive S1's onboard encoder. It provides the necessary magnetic field for the controller to accurately track the motor's rotational position.
+* **Bearings (OD 95mm ball bearing, 625ZZ bearings):** The selection of these bearings was primarily driven by their **wide availability** and **low cost**, ensuring that replacement or sourcing for replication remains straightforward and economical. They provide the necessary support and smooth operation for the moving parts within the gearbox.
+* **Other components:** Including 4-40 Keenserts, M5x30 steel dowel pins, and various screws, are detailed in the full BOM.
 
 **Total Project Cost (Components): $282.49**
+
+*The full Bill of Materials (BOM) is detailed below, including component names, quantities, costs, and sourcing information can be found in the project files as an Excel sheet named `ShacTuator BOM.xlsx`.*
 
 ## Mechanical Design & CAD
 
