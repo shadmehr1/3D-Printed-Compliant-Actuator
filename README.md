@@ -1,9 +1,13 @@
 # 3D Printed Compliant Actuator
-(Also Referred to as *THE SHACTUATOR* in various remote regions of the world)
+(Referred to as *THE SHACTUATOR* in various remote regions of the world.)
 
 A compact, high-performance open-source actuator for advanced robotics, designed and built to explore fundamental principles of electronics, motors, and gearboxes for applications like robotic locomotion.
 
-**[EMBED VIDEO/GIF OF ACTUATOR IN ACTION HERE]**
+<p align="center">
+  <img src="MEDIA/7FTLB_COMPLIANCE.GIF" alt="Compliance at 7ft-lbs" width="600">
+  <br>
+  <em>Figure 1: The actuator's compliance is on display. This is the exact behavior you would want out of a joint in a robotic dog or humanoid .</em>
+</p>
 
 ---
 
@@ -37,21 +41,20 @@ A compact, high-performance open-source actuator for advanced robotics, designed
 
 ## Introduction
 
-This project explores the design and fabrication of a custom, high-torque-density actuator, dubbed the "SHACTUATOR," leveraging 3D printing and advanced brushless DC motor control. Our primary motivation was the ambitious goal of building a robotic dog, which naturally led us to design and construct our own actuators to deepen our understanding of electronics, motors, and gearboxes. By getting our hands dirty with these foundational elements of applied robotics, we aimed to gain a comprehensive understanding of the root components essential for millions of applications.
+This project explores the design and fabrication of a custom, high-torque-density actuator, dubbed the "SHACTUATOR," leveraging a 3D printed gearbox, and low cost brushless DC motors, and a an ODrive motor controllerr. My distant goal is to build a robtoic dog or humanoid, but you can't do that without validating an actuator design. Naturally, that led me to design and construct our my actuators to deepen my understanding of electronics, motors, and gearboxes. By getting my hands dirty with these foundational elements of applied robotics, I aimed to gain a comprehensive understanding of the root components essential for millions of applications.
 
 ## Project Goals & Requirements
 
 The development of the SHACTUATOR was guided by several key objectives:
-* **High Torque Density:** Design an actuator capable of delivering substantial torque relative to its size.
+* **High Torque Density:** Design an actuator capable of delivering substantial torque relative to its size. Must deliver at least 5 Ft-Lbs of torque.
 * **Compliance & Backdrivability:** Ensure the actuator can yield to external forces and be backdriven, a critical feature for safe and dynamic robotic interaction.
-* **3D Print Feasibility:** Leverage FDM 3D printing for rapid prototyping and cost-effectiveness in manufacturing components.
-* **Cost-Effectiveness:** Utilize readily available and affordable components where possible.
+* **3D Print Feasibility:** Leverage 3D printing for rapid prototyping and cost-effectiveness in manufacturing components.
+* **Cost-Effectiveness:** Utilize readily available and affordable components, where possible.
 * **Learning Objectives:** Provide a robust platform for learning about BLDC motor control, gearbox design, and mechatronic system integration.
-* **Robotic Dog Application:** Design with the specific requirements of a quadruped robot joint in mind.
 
 ## Design Philosophy: Gearbox Selection
 
-When embarking on the design of a custom actuator, selecting the appropriate gearbox type is paramount. We considered three primary options: Planetary, Cycloidal, and Harmonic drives, each with its unique trade-offs in terms of performance, complexity, and manufacturability. To justify our decision, a quick comparative analysis was conducted.
+When embarking on the design of a custom actuator, selecting the appropriate gearbox type is paramount. I considered three primary options: Planetary, Cycloidal, and Harmonic drives, each with its unique trade-offs in terms of performance, complexity, and manufacturability. To justify my decision, I conducted a weighted trade:
 
 | Criterion              | Harmonic                               | Planetary                          | Cycloidal                          | Notes                                           |
 | :--------------------- | :------------------------------------- | :--------------------------------- | :--------------------------------- | :---------------------------------------------- |
@@ -65,14 +68,15 @@ When embarking on the design of a custom actuator, selecting the appropriate gea
 
 *Note: For the above table, a rating of 5 signifies an excellent performance or characteristic for that criterion.*
 
-We ultimately opted for a **Planetary gearbox system**. While Cycloidal and Harmonic drives offer superior efficiency and backlash characteristics, their increased design and printing complexity presented a significant hurdle for a proof-of-concept project. Our primary goal was to validate the overall actuator concept rather than delve into the intricacies of perfecting highly complex 3D-printed cycloidal or harmonic drives. Planetary gearboxes strike a favorable balance, offering sufficient efficiency and ease of fabrication, which was crucial for rapid prototyping.
+I ultimately opted for a **Planetary gearbox system**. While Cycloidal and Harmonic drives offer superior efficiency and backlash characteristics, their increased design and printing complexity presented a significant hurdle for a proof-of-concept project. I wanted to move fast. My primary goal was to validate the overall actuator concept rather than delve into the intricacies of perfecting highly complex 3D-printed cycloidal or harmonic drives. Planetary gearboxes strike a favorable balance, offering sufficient efficiency and ease of fabrication, which was crucial for rapid prototyping.
+(The full trade is uploaded: 'DESIGN/Gearbox Trade.xlsx')
 
 ### Gear Ratio Calculation
 
-Our planetary gearbox was meticulously designed to achieve an **8:1 gear ratio**, effectively multiplying the motor's output torque by eight. We chose helical gears over spur gears for this design. Helical gears provide a smoother and quieter operation due to the gradual engagement of teeth, and more importantly, they offer a higher load capacity by distributing the load across multiple teeth simultaneously. This was a critical consideration given the use of PLA for printed components, as it adds a valuable safety factor by spreading the load and mitigating potential stress concentrations.
+My planetary gearbox was meticulously designed to achieve an **8:1 gear ratio**, effectively multiplying the motor's output torque by eight. I chose helical gears over spur gears because they provide a smoother and quieter operation due to the gradual engagement of teeth and larger surface area of engagement. More importantly, they offer a higher load capacity by distributing the load across multiple teeth simultaneously. This was a critical consideration given the use of PLA for printed components, as it adds a valuable safety factor by spreading the load and mitigating potential stress concentrations.
 
 <p align="center">
-  <img src="images/GEAR_RATIO_CALC.JPEG" alt="Gear Box Calculation" width="600">
+  <img src="MEDIA/GEAR_RATIO_CALC.JPEG" alt="Gear Box Calculation" width="600">
   <br>
   <em>Figure 1: Detailed calculations for the 8:1 helical planetary gearbox ratio and teeth selection, ensuring proper meshing and desired reduction.</em>
 </p>
@@ -94,24 +98,18 @@ The SHACTUATOR integrates a select set of components, chosen for their performan
 
 **Total Project Cost (Components): $282.49**
 
-<p align="center">
-  <img src="images/image_5c3504.png" alt="Bill of Materials" width="800">
-  <br>
-  <em>Figure 2: Detailed Bill of Materials (BOM) including component names, quantities, costs, and sourcing information.</em>
-</p>
-
 ## Mechanical Design & CAD
 
 The SHACTUATOR's mechanical design emphasizes modularity, enabling ease of assembly, maintenance, and potential future modifications. The entire actuator is ingeniously composed of four main assemblies, meticulously designed to slip together. This modular approach significantly streamlines the construction process and offers flexibility for iterating on specific components.
 
 <p align="center">
-  <img src="images/SHACTUATOR_EXPL.jpg" alt="SHACTUATOR Exploded View" width="700">
+  <img src="MEDIA/SHACTUATOR_EXPL.jpg" alt="SHACTUATOR Exploded View" width="700">
   <br>
   <em>Figure 3: An exploded view of the SHACTUATOR, illustrating its main components and their arrangement.</em>
 </p>
 
 <p align="center">
-  <img src="images/SHACTUATOR_ASSY.jpg" alt="SHACTUATOR Assembled View" width="700">
+  <img src="MEDIA/SHACTUATOR_ASSY.jpg" alt="SHACTUATOR Assembled View" width="700">
   <br>
   <em>Figure 4: The fully assembled SHACTUATOR, showcasing its compact form factor and integrated design.</em>
 </p>
@@ -124,28 +122,28 @@ The SHACTUATOR consists of 4 main assemblies that slip together for streamlined 
 
 * **End Effector and Bearing:** This assembly forms the primary output of the actuator. Designed with various end effector versions, it facilitates rapid testing and minimizes potential sources of error. The default design allows for direct mounting of these end effectors.
     <p align="center">
-      <img src="images/BEARING_ASSY.jpg" alt="Bearing Subassembly" width="600">
+      <img src="MEDIA/BEARING_ASSY.jpg" alt="Bearing Subassembly" width="600">
       <br>
       <em>Figure 5: Exploded view of the Bearing Subassembly, highlighting the 75mm ID, 90mm OD bearing that supports the actuator's output shaft.</em>
     </p>
 
 * **Actuator Housing:** This critical component serves a dual purpose: it functions as the stationary **ring gear** for the planetary system and acts as a protective shroud for the entire internal assembly. Integrated holes provide passive cooling to dissipate heat generated during operation.
     <p align="center">
-      <img src="images/HOUSING.jpg" alt="Housing Component" width="600">
+      <img src="MEDIA/HOUSING.jpg" alt="Housing Component" width="600">
       <br>
       <em>Figure 6: The Housing component, which functions as the ring gear and actuator shroud, showing its internal helical gear teeth and integrated cooling provisions.</em>
     </p>
 
 * **Planetary Carriers:** This subassembly houses the planet gears. It incorporates steel dowel pins and small roller bearings alongside the gears, ensuring smooth and efficient power transmission. A key manufacturing note for this part is the requirement to pause the 3D print mid-way to insert these bearings.
     <p align="center">
-      <img src="images/CARRIER_ASSY.jpg" alt="Planet Carrier Subassembly" width="600">
+      <img src="MEDIA/CARRIER_ASSY.jpg" alt="Planet Carrier Subassembly" width="600">
       <br>
       <em>Figure 7: The Planet Carrier Subassembly, showing the arrangement of planet gears, 3x M5 dowel pins, and 3x 5mm ID, 16mm OD bearings, crucial for smooth planetary motion.</em>
     </p>
 
 * **Motor Subassembly:** This assembly integrates the EaglePower brushless motor with the **sun gear**. The motor is securely attached to a back plate, which also provides mounting provisions for the ODrive S1 controller. Precise positioning of the ODrive is essential to ensure optimal alignment with the onboard encoder and magnet for accurate position feedback.
     <p align="center">
-      <img src="images/MOTOR_ASSY.jpg" alt="Motor Subassembly" width="600">
+      <img src="MEDIA/MOTOR_ASSY.jpg" alt="Motor Subassembly" width="600">
       <br>
       <em>Figure 8: The Motor Subassembly, illustrating the brushless motor, sun gear attachment, ODrive S1 controller, and the 6mm Neodymium magnet used for encoder feedback.</em>
     </p>
@@ -169,25 +167,25 @@ Utilizing FDM 3D printing for the SHACTUATOR's components brought both advantage
 The assembly process for the SHACTUATOR was significantly simplified by its modular design, allowing for a logical and systematic integration of components.
 
 <p align="center">
-  <img src="images/ASSEMBLY_1.jpg" alt="Initial Assembly Phase" width="600">
+  <img src="MEIDA/ASSEMBLY_1.jpg" alt="Initial Assembly Phase" width="600">
   <br>
   <em>Figure 9: Initial assembly phase, showing the integration of the main bearing into the housing, highlighting the wooden rod used for stability during early tests.</em>
 </p>
 
 <p align="center">
-  <img src="images/ASSEMBLY_2.jpg" alt="Planetary Carrier Insertion" width="600">
+  <img src="MEDIA/ASSEMBLY_2.jpg" alt="Planetary Carrier Insertion" width="600">
   <br>
   <em>Figure 10: Assembling the planetary carrier subassembly into the main housing, showcasing the helical planet gears.</em>
 </p>
 
 <p align="center">
-  <img src="images/ASSEMBLY_3.jpg" alt="Actuator Assembly with Wooden Rod" width="600">
+  <img src="MEDIA/ASSEMBLY_3.jpg" alt="Actuator Assembly with Wooden Rod" width="600">
   <br>
   <em>Figure 11: The actuator assembly with the wooden rod fully integrated, demonstrating the early testing setup.</em>
 </p>
 
 <p align="center">
-  <img src="images/ASSEMBLY_4.jpg" alt="Motor and ODrive Integration" width="600">
+  <img src="MEDIA/ASSEMBLY_4.jpg" alt="Motor and ODrive Integration" width="600">
   <br>
   <em>Figure 12: Integrating the motor and ODrive controller into the actuator housing, completing the core electromechanical assembly.</em>
 </p>
@@ -197,7 +195,7 @@ The assembly process for the SHACTUATOR was significantly simplified by its modu
 The SHACTUATOR's intelligent control is handled by the **ODrive S1 Controller**, which precisely manages the EaglePower brushless motor. For position feedback, the motor leverages its onboard encoder in conjunction with a 6mm Neodymium magnet. Crucially, the ODrive Technical Specification recommends maintaining a spacing of **0.5 to 3mm** between the top surface of the encoder IC and the magnet for optimal performance and signal integrity.
 
 <p align="center">
-  <img src="images/image_5c3c82.png" alt="Encoder Magnet Spacing" width="500">
+  <img src="MEDIA/image_5c3c82.png" alt="Encoder Magnet Spacing" width="500">
   <br>
   <em>Figure 13: Diagram illustrating the recommended spacing (0.5 - 3mm) between the ODrive encoder and the magnet for optimal position sensing.</em>
 </p>
@@ -213,7 +211,7 @@ Optimal performance of the SHACTUATOR was achieved through careful tuning of the
 * **Velocity Integrator Gain:** 0.05 (Nm/s)/(rev/s)
 
 <p align="center">
-  <img src="images/image_5c3ca7.png" alt="ODrive Dashboard Tuning" width="700">
+  <img src="MEDIA/image_5c3ca7.png" alt="ODrive Dashboard Tuning" width="700">
   <br>
   <em>Figure 14: Screenshot of the ODrive Dashboard showing the configured PID gain values (Position, Velocity, and Velocity Integrator Gain) and the resultant position, velocity, and current damping curves during testing.</em>
 </p>
@@ -228,13 +226,13 @@ Rigorous testing was conducted to characterize the SHACTUATOR's performance acro
 * **Results:** In the low current limit stages, the actuator exhibited linear behavior, with actual torque closely aligning with the theoretical $T = (k_t)(I)$ relationship. However, from 15A and beyond, a noticeable deviation from the expected linear trend was observed, indicating some loss. This phenomenon is commonly attributed to material friction losses (e.g., from bearings or gear meshing) and heat generation, particularly at higher torques and currents, a finding consistent with existing motor torque literature. Our final actuator torque was calculated to be **11.68 ft-lbs**.
 
 <p align="center">
-  <img src="images/TORQUE_RESULTS.png" alt="Torque vs Current Limit" width="700">
+  <img src="MEDIA/TORQUE_RESULTS.png" alt="Torque vs Current Limit" width="700">
   <br>
   <em>Figure 15: Torque vs Current Limit graph, comparing measured performance against projected linear behavior, highlighting the onset of losses at higher current thresholds.</em>
 </p>
 
 <p align="center">
-  <img src="images/MOTOR_TORQUE_CALC.JPEG" alt="Motor Torque Calculation" width="600">
+  <img src="MEDIA/MOTOR_TORQUE_CALC.JPEG" alt="Motor Torque Calculation" width="600">
   <br>
   <em>Figure 16: Detailed motor torque calculations, including the derivation of the torque constant (kt) and the final actuator torque, incorporating an assumed 80% efficiency for the system.</em>
 </p>
