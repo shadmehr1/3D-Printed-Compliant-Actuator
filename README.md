@@ -3,11 +3,13 @@
 
 A compact, high-performance open-source actuator for advanced robotics, designed and built to explore fundamental principles of electronics, motors, and gearboxes for applications like robotic locomotion.
 
+
 <p align="center">
-  <img src="MEDIA/7FTLB_COMPLIANCE.gif" alt="Compliance at 7ft-lbs" width="600">
+  <img src="MEDIA/SHACTUATOR_EXPL.png" alt="SHACTUATOR Exploded View" width="700">
   <br>
-  <em>Figure 1: The actuator's compliance is on display. This is the exact behavior you would want out of a joint in a robotic dog or humanoid .</em>
+  <em>Figure 1: An exploded view of the SHACTUATOR, illustrating its main components and their arrangement.</em>
 </p>
+
 
 ---
 
@@ -83,12 +85,10 @@ My planetary gearbox was meticulously designed to achieve an **8:1 gear ratio**,
 
 ## Core Components & Bill of Materials
 
-## Core Components & Bill of Materials
-
 The SHACTUATOR integrates a select set of components, chosen for their performance, availability, and suitability for the project's goals.
 
 * **EaglePower 8308 KV90 Brushless Motor:** Designed for agricultural drones, this motor was a strategic choice due to its compelling balance of characteristics. It offers a **low profile** ideal for compact actuator designs, delivers **relatively high performance** suitable for dynamic robotic applications, and comes at a **good price** ($69.09 from AliExpress), making it an accessible option for a custom build.
-    * **Specifications:** Size: 3.62” Dia, 1.12” height; 0.741 lbs; Max Continuous Current 22A; 20 pole pairs. KV90: means it can rotate at an RPM of '90 * Voltage Provided'
+    * **Specifications:** Size: 3.62” Dia, 1.12” height; 0.741 lbs; Max Continuous Current 22A; 20 pole pairs. KV90: means it can rotate at an RPM of 90 * Voltage Provided
 * **ODrive S1 Controller** (Count: 1): This advanced motor controller is the brains of the operation, chosen for its robust capabilities in precisely managing brushless DC motor commutation and control ($169.73 from ODrive Robotics). Its sophisticated control algorithms enable the high performance and compliant behavior demonstrated by the SHACTUATOR.
 * **Encoder Magnet** (Count: 1): Essential for precise position feedback, this Neodymium magnet is designed to work seamlessly with the ODrive S1's onboard encoder. It provides the necessary magnetic field for the controller to accurately track the motor's rotational position.
 * **Bearings (OD 95mm ball bearing, 625ZZ bearings):** The selection of these bearings was primarily driven by their **wide availability** and **low cost**, ensuring that replacement or sourcing for replication remains straightforward and economical. They provide the necessary support and smooth operation for the moving parts within the gearbox.
@@ -103,12 +103,6 @@ The SHACTUATOR integrates a select set of components, chosen for their performan
 The SHACTUATOR's mechanical design emphasizes modularity, enabling ease of assembly, maintenance, and potential future modifications. The entire actuator is ingeniously composed of four main assemblies, meticulously designed to slip together. This modular approach significantly streamlines the construction process and offers flexibility for iterating on specific components.
 
 <p align="center">
-  <img src="MEDIA/SHACTUATOR_EXPL.jpg" alt="SHACTUATOR Exploded View" width="700">
-  <br>
-  <em>Figure 3: An exploded view of the SHACTUATOR, illustrating its main components and their arrangement.</em>
-</p>
-
-<p align="center">
   <img src="MEDIA/SHACTUATOR_ASSY.jpg" alt="SHACTUATOR Assembled View" width="700">
   <br>
   <em>Figure 4: The fully assembled SHACTUATOR, showcasing its compact form factor and integrated design.</em>
@@ -120,21 +114,21 @@ The SHACTUATOR consists of 4 main assemblies that slip together for streamlined 
 
 ### Key Subassemblies
 
-* **End Effector and Bearing:** This assembly forms the primary output of the actuator. Designed with various end effector versions, it facilitates rapid testing and minimizes potential sources of error. The default design allows for direct mounting of these end effectors.
+* **End Effector and Bearing:** This assembly forms the primary output of the actuator. It houses the output bearing and customizable end effector. Designed with various end effector versions, it facilitates rapid testing and minimizes potential sources of error. The default design allows for direct mounting of these end effectors.
     <p align="center">
       <img src="MEDIA/BEARING_ASSY.jpg" alt="Bearing Subassembly" width="600">
       <br>
       <em>Figure 5: Exploded view of the Bearing Subassembly, highlighting the 75mm ID, 90mm OD bearing that supports the actuator's output shaft.</em>
     </p>
 
-* **Actuator Housing:** This critical component serves a dual purpose: it functions as the stationary **ring gear** for the planetary system and acts as a protective shroud for the entire internal assembly. Integrated holes provide passive cooling to dissipate heat generated during operation.
+* **Actuator Housing:** This critical component serves a dual purpose: it functions as the stationary **ring gear** for the planetary system and acts as a protective shroud for the entire internal assembly. Integrated holes provide passive cooling to dissipate heat generated during operation. I modified the structure to give firm clamping points (my initial testing was pushing the actuator to its ends, slipping from the clamps during limit testing)
     <p align="center">
       <img src="MEDIA/HOUSING.jpg" alt="Housing Component" width="600">
       <br>
       <em>Figure 6: The Housing component, which functions as the ring gear and actuator shroud, showing its internal helical gear teeth and integrated cooling provisions.</em>
     </p>
 
-* **Planetary Carriers:** This subassembly houses the planet gears. It incorporates steel dowel pins and small roller bearings alongside the gears, ensuring smooth and efficient power transmission. A key manufacturing note for this part is the requirement to pause the 3D print mid-way to insert these bearings.
+* **Planetary Carriers:** This subassembly houses the planet gears. It incorporates steel dowel pins and small roller bearings alongside the gears, ensuring smooth and efficient power transmission. A key assembly note is that you must add pause a pause to your 3D print program such that you can press fit the bearings in and allow for the print to continue around them.
     <p align="center">
       <img src="MEDIA/CARRIER_ASSY.jpg" alt="Planet Carrier Subassembly" width="600">
       <br>
@@ -166,29 +160,37 @@ Utilizing FDM 3D printing for the SHACTUATOR's components brought both advantage
 
 The assembly process for the SHACTUATOR was significantly simplified by its modular design, allowing for a logical and systematic integration of components.
 
-<p align="center">
-  <img src="MEIDA/ASSEMBLY_1.jpg" alt="Initial Assembly Phase" width="600">
-  <br>
-  <em>Figure 9: Initial assembly phase, showing the integration of the main bearing into the housing, highlighting the wooden rod used for stability during early tests.</em>
-</p>
+*Key Assembly Note: Add pause a pause to your gear 3D print program such that you can press fit the bearings in and allow for the print to continue around the gear body.*
 
 <p align="center">
-  <img src="MEDIA/ASSEMBLY_2.jpg" alt="Planetary Carrier Insertion" width="600">
+  <img src="MEIDA/BEARING_PRINT.jpg" alt="Press Fit Bearings during 3D Print" width="600">
   <br>
-  <em>Figure 10: Assembling the planetary carrier subassembly into the main housing, showcasing the helical planet gears.</em>
+  <em>Figure 9: Key Assembly Note: Press Fitting the radial bearings into the gears mid-print.
+.</em>
 </p>
 
-<p align="center">
-  <img src="MEDIA/ASSEMBLY_3.jpg" alt="Actuator Assembly with Wooden Rod" width="600">
-  <br>
-  <em>Figure 11: The actuator assembly with the wooden rod fully integrated, demonstrating the early testing setup.</em>
-</p>
-
-<p align="center">
-  <img src="MEDIA/ASSEMBLY_4.jpg" alt="Motor and ODrive Integration" width="600">
-  <br>
-  <em>Figure 12: Integrating the motor and ODrive controller into the actuator housing, completing the core electromechanical assembly.</em>
-</p>
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+  <div style="text-align: center;">
+    <img src="MEDIA/ASSEMBLY_1.jpg" alt="Initial Assembly Phase" style="width: 100%; max-width: 400px; height: auto;">
+    <br>
+    <em>Figure 9: Initial assembly phase, showing the integration of the main bearing into the housing, highlighting the wooden rod used for stability during early tests.</em>
+  </div>
+  <div style="text-align: center;">
+    <img src="MEDIA/ASSEMBLY_2.jpg" alt="Planetary Carrier Insertion" style="width: 100%; max-width: 400px; height: auto;">
+    <br>
+    <em>Figure 10: Assembling the planetary carrier subassembly into the main housing, showcasing the helical planet gears.</em>
+  </div>
+  <div style="text-align: center;">
+    <img src="MEDIA/ASSEMBLY_3.jpg" alt="Actuator Assembly with Wooden Rod" style="width: 100%; max-width: 400px; height: auto;">
+    <br>
+    <em>Figure 11: The actuator assembly with the wooden rod fully integrated, demonstrating the early testing setup.</em>
+  </div>
+  <div style="text-align: center;">
+    <img src="MEDIA/ASSEMBLY_4.jpg" alt="Motor and ODrive Integration" style="width: 100%; max-width: 400px; height: auto;">
+    <br>
+    <em>Figure 12: Integrating the motor and ODrive controller into the actuator housing, completing the core electromechanical assembly.</em>
+  </div>
+</div>
 
 ## Electronics & Control Setup
 
@@ -241,6 +243,12 @@ Rigorous testing was conducted to characterize the SHACTUATOR's performance acro
 
 * **Methodology:** The actuator's inherent compliance and backdrivability were qualitatively tested at various torque ratings: 4, 7.5, and 14 ft-lb.
 * **Results:** Across all tested torque setups, the SHACTUATOR proved to be backdrivable, meaning it could be moved by external forces. Furthermore, it demonstrated excellent damping characteristics after careful tuning of the ODrive controller's gains. As anticipated, backdriving was significantly easier at lower torque settings. This outcome was highly satisfactory, as it successfully proved the actuator's compliance, making it a strong candidate for applications requiring compliant joints, such as a robotic dog.
+
+<p align="center">
+  <img src="MEDIA/7FTLB_COMPLIANCE.gif" alt="Compliance at 7ft-lbs" width="600">
+  <br>
+  <em>Figure 1: The actuator's compliance is on display. This is the exact behavior you would want out of a joint in a robotic dog or humanoid .</em>
+</p>
 
 ### Speed Tests
 
