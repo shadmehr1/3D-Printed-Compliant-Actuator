@@ -142,12 +142,14 @@ The SHACTUATOR consists of 4 main assemblies that slip together for streamlined 
       <em>Figure 8: The Motor Subassembly, illustrating the brushless motor, sun gear attachment, ODrive S1 controller, and the 6mm Neodymium magnet used for encoder feedback.</em>
     </p>
 
+The CAD models (STP files) for the SHACTUATOR, including all assemblies and individual components, are attached to this repository. These models provide comprehensive details for replication, modification, or further development.
+
 ### Design Notes
 
 * Variations for different end effectors were used in the design process, streamlining testing procedures and minimizing potential error sources. I uploaded the CAD with a slot for 1" Rod for your testing and validation purposes.
 * The actuator housing integrates passive cooling holes to help manage heat during operation.
 * The ODrive S1 controller's mounting provisions are carefully designed to ensure the critical 0.5-3mm spacing from the motor's magnet for reliable onboard encoder operation. More on this below.
-
+  
 ## Manufacturing & 3D Printing Notes
 
 Utilizing FDM 3D printing for the SHACTUATOR's components brought both advantages and specific considerations:
@@ -247,21 +249,27 @@ Rigorous testing was conducted to characterize the SHACTUATOR's performance acro
 <p align="center">
   <img src="MEDIA/7FTLB_COMPLIANCE.gif" alt="Compliance at 7ft-lbs" width="600">
   <br>
-  <em>Figure 1: The actuator's compliance is on display. This is the exact behavior you would want out of a joint in a robotic dog or humanoid .</em>
+  <em>Figure 1: The actuator's compliance when set to exert 7ft-lbs.</em>
+</p>
+
+<p align="center">
+  <img src="MEDIA/15FTLB_COMPLIANCE.gif" alt="Compliance at 7ft-lbs" width="600">
+  <br>
+  <em>Figure 1: The Shactuator's compliance when set to exert 15ft-lbs.</em>
 </p>
 
 ### Speed Tests
 
 * **Results:** Performance tests showed that the motor can reach a peak speed of **1920 rpm** before encountering the upper current limit of the desktop power supply. The actuator is capable of maintaining a continuous speed of **1200 rpm** under no-load conditions.
-* **Power Supply Configuration:** During these tests, the power supply was set to 24V (with a maximum capacity of 30V) and its output current limit was set to its maximum of 10A. The motor itself has a peak continuous current rating of 22A.
+* **Power Supply Configuration:** During these tests, the power supply was set to 24V and its output current limit was set to its maximum of 10A. The motor itself has a peak continuous current rating of 22A.
 
 ### Continuous Torque Test
 
-* **Methodology:** To assess the actuator's ability to sustain torque over time, a continuous torque test was devised. Given the motor's specified continuous current limit of 22A, which translates to approximately 10 ft-lbs from our torque graph, a 5lb dumbbell was attached to a weighted band. The SHACTUATOR then performed a series of "robot curls" to evaluate its endurance under continuous load.
+* **Methodology:** To assess the actuator's ability to sustain torque over time, a continuous torque test was devised. Given the motor's specified continuous current limit of 22A, which translates to approximately 10 ft-lbs from our torque graph, a 5lb dumbbell was attached to a weighted band. The SHACTUATOR then performed a series of "robot curls" to evaluate its endurance under continuous load. It showed no signs of performance degredation after 1 minute of operation. NOTE: A house fan was used in this operation as a safety measure to stir the air.
 
 ### Backlash Evaluation
 
-* **Results:** Moderate backlash was qualitatively detected in the system. While precise quantification was not possible without a strain gauge, the observed backlash was deemed to be very little, which is a positive indicator for a 3D-printed gearbox.
+* **Results:** Moderate backlash was qualitatively detected in the system. While precise quantification was not possible without a strain gauge, the observed backlash was deemed to be very little, which is a positive indicator for a 3D-printed gearbox. In order to optimize in this future, I will add more preload to the gears when designing them, beefing them up, in essence.
 
 ## Challenges & Lessons Learned
 
@@ -269,22 +277,25 @@ Developing the SHACTUATOR provided valuable insights and highlighted several cri
 
 ### Power Supply Limitations
 
-During higher current testing, particularly above 35A, the desktop power supply used reached its upper capability limit. This constraint prevented us from fully characterizing the motor's performance at its highest operational currents and understanding its behavior under more extreme loads. Moving forward, a more robust power supply will be essential.
+During higher current testing, particularly above 30A, the desktop power supply used reached its upper capability limit. This constraint prevented me from fully characterizing the motor's performance at its highest operational currents and understanding its behavior under more extreme loads. Moving forward, a more robust power supply will be essential.
 
 ### Material Strain
 
-An early design hurdle emerged at around 15A during torque tests: the PLA printed rod and the round actuator housing, secured by wood clamps, proved unable to maintain stability. This necessitated a quick pivot to reinforce the system. The original PLA rod was reprinted using wood, significantly improving stability for subsequent tests. This experience underscored the importance of material selection and robust mechanical fixturing, especially when pushing 3D printed components to their limits, and suggested potential friction and heat losses in the printed material itself at higher torques.
+An early design hurdle emerged at around 15A during torque tests: the PLA printed rod and the round actuator housing, secured by wood clamps, proved unable to maintain stability. This necessitated a quick pivot to reinforce the system. The original PLA rod was reprinted using wood, significantly improving stability for subsequent tests. That is how I landed at the design revision which I uploaded. This experience underscored the importance of material selection and robust mechanical fixturing, especially when pushing 3D printed components to their limits, and suggested potential friction and heat losses in the printed material itself at higher torques.
+
+<p align="center">
+  <img src="MEDIA/VICE_FAIL.gif" alt="Vice-Fail" width="600">
+  <br>
+  <em>Figure 1: Clamps slipping and failing when I using an earlier revision of the Shactuator. I redesigned the end effector and the housing to accomodate for high load testing.</em>
+</p>
 
 ## Future Improvements
 
 Based on the insights gained from this project, several avenues for future improvement have been identified to enhance the SHACTUATOR's performance and capabilities:
 
+* **Assembly a Robotic Leg:** The whole purpose of this effort was to validate actuator design for a robotic dog. The next big leap will be to put 3 of these actuators in a singular system and simulate the leg of a robotic dog.
+* **Reduce Package Size:** This actuator is too big and clunky for a nimble robotic dog, so my next revision will see a more streamlined housing. I will reduce the module of the gears. I believe this will reduce their max torque capability, but we are well within safety for continuous torques.
 * **Reduce Backlash:** A key improvement for future revisions will involve increasing the preload in the gear teeth. This mechanical adjustment is expected to significantly reduce the observed backlash, leading to more precise motion control.
 * **Enhanced Power Supply:** To fully unlock the EaglePower motor's potential and conduct comprehensive testing beyond 35A, investing in a higher-capacity power supply is a priority.
 * **Advanced Control & Thermal Management:** While good damping was achieved, exploring more sophisticated control strategies could further optimize performance. Additionally, integrating a thermistor for continuous temperature monitoring would provide crucial data for thermal management, especially under sustained high-torque operation.
 * **Quantitative Data Collection:** Implementing dedicated instrumentation, such as strain gauges, would enable the quantitative measurement of compliance and backlash, providing precise performance metrics that were not achievable in this phase.
-* **Full Robotic Integration:** The promising compliance results, particularly for a robotic dog application, suggest that the next logical step is to integrate the SHACTUATOR into a complete robotic platform, testing its performance in a real-world multi-joint system.
-
-## CAD Models
-
-The CAD models (STP files) for the SHACTUATOR, including all assemblies and individual components, are attached to this repository. These models provide comprehensive details for replication, modification, or further development.
