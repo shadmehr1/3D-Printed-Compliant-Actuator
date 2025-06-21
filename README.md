@@ -186,7 +186,7 @@ The assembly process for the SHACTUATOR was significantly simplified by its modu
 
 ## Electronics & Control Setup
 
-The SHACTUATOR's intelligent control is handled by the **ODrive S1 Controller**, which precisely manages the EaglePower brushless motor. For position feedback, the motor leverages its onboard encoder in conjunction with a 6mm Neodymium magnet. Crucially, the [ODrive Technical Specification]([URL](https://docs.odriverobotics.com/v/latest/articles/magnetic-encoders.html#design-consideration)) recommends maintaining a spacing of **0.5 to 3mm** between the top surface of the encoder IC and the magnet for optimal performance and signal integrity.
+The SHACTUATOR's intelligent control is handled by the **ODrive S1 Controller**, which precisely manages the EaglePower brushless motor. For position feedback, the motor leverages its onboard encoder in conjunction with a 6mm Neodymium magnet. Crucially, the [ODrive Technical Specification](https://docs.odriverobotics.com/v/latest/articles/magnetic-encoders.html#design-consideration) recommends maintaining a spacing of **0.5 to 3mm** between the top surface of the encoder IC and the magnet for optimal performance and signal integrity.
 
 <p align="center">
   <img src="MEDIA/MAGNET_DISTANCE.png" alt="Encoder Magnet Spacing" width="500">
@@ -224,7 +224,7 @@ Rigorous testing was conducted to characterize the SHACTUATOR's performance acro
 </p>
 
 * **Methodology:** The actuator's maximum torque output was assessed using a handheld force gauge at a marked distance from the actuator's rotation axis.
-* **Results:** In the low current limit stages, the actuator exhibited linear behavior, with actual torque closely aligning with the theoretical $T = (k_t)(I)$ relationship. However, from 15A and beyond, a noticeable deviation from the expected linear trend was observed, indicating some loss. This phenomenon is commonly attributed to material friction losses (e.g., from bearings or gear meshing) and heat generation, particularly at higher torques and currents, a finding consistent with [existing motor torque literature]([URL](https://www.controleng.ca/servosoft/SSHelp1033/source/MotorTorqueVsCurrent.htm)).
+* **Results:** In the low current limit stages, the actuator exhibited linear behavior, with actual torque closely aligning with the theoretical $T = (k_t)(I)$ relationship. However, from 15A and beyond, a noticeable deviation from the expected linear trend was observed, indicating some loss. This phenomenon is commonly attributed to material friction losses (e.g., from bearings or gear meshing) and heat generation, particularly at higher torques and currents, a finding consistent with [existing motor torque literature](https://www.controleng.ca/servosoft/SSHelp1033/source/MotorTorqueVsCurrent.htm).
 
 <p align="center">
   <img src="MEDIA/MAX_TORQUE.gif" alt="Max Torque Test" width="700">
@@ -235,7 +235,7 @@ Rigorous testing was conducted to characterize the SHACTUATOR's performance acro
 <p align="center">
   <img src="MEDIA/TORQUE_RESULTS.png" alt="Torque vs Current Limit" width="700">
   <br>
-  <em>Figure 15: Torque vs Current Limit graph, comparing measured performance against projected linear behavior, highlighting the onset of losses at higher current thresholds, consistent with [existing motor torque literature]([URL](https://www.controleng.ca/servosoft/SSHelp1033/source/MotorTorqueVsCurrent.htm)).</em>
+  <em>Figure 15: Torque vs Current Limit graph, comparing measured performance against projected linear behavior, highlighting the onset of losses at higher current thresholds, consistent with [existing motor torque literature](https://www.controleng.ca/servosoft/SSHelp1033/source/MotorTorqueVsCurrent.htm).</em>
 </p>
 
 
