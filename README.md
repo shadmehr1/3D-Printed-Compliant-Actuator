@@ -154,7 +154,7 @@ The CAD models (STP files) for the Shactuator, including all assemblies and indi
   
 ## Manufacturing & 3D Printing Notes
 
-Utilizing FDM 3D printing for the Shactuator's components brought both advantages and specific considerations:
+Utilizing a Bambu P1S to fabricate components brought both advantages and specific considerations:
 
 * **Press-Fit Tolerances:** When designing circular press-fit parts, such as bearing seats on 3D printed components, I noticed that oversizing the printed part by **1-2%** generally yields an optimal interference fit. This helps compensate for common 3D printing dimensional inaccuracies and ensures secure seating of components.
 * **Mid-Print Bearing Insertion:** For the planetary carriers, a unique assembly step was required: the 3D print had to be paused partway through its fabrication to allow for the precise insertion of the small roller bearings. This ensures the bearings are fully encapsulated within the printed structure.
@@ -162,7 +162,16 @@ Utilizing FDM 3D printing for the Shactuator's components brought both advantage
 <p align="center">
   <img src="MEDIA/BEARING_PRINT.jpg" alt="Press Fit Bearings during 3D Print" width="500">
   <br>
-  <em>Figure 9: Key Assembly Note: Press Fitting the radial bearings into the gears mid-print.
+  <em>Figure 8: Key Assembly Note: Press Fitting the radial bearings into the gears mid-print.
+.</em>
+</p>
+
+* **Lubricate Gears:** A critical design component is lube. It reduces friction and noise. The system which loses less energy to friction will in turn be more efficient. I made sure to generously apply Multi-Purpose Synthetic Grease to all gear interfaces.
+
+<p align="center">
+  <img src="MEDIA/GREASE.jpg" alt="Grease Application" width="400">
+  <br>
+  <em>Figure 9: Key Assembly Note: Lubricate all gear interfaces to reduce friction and maintin higher system efficiencies.
 .</em>
 </p>
 
@@ -173,19 +182,19 @@ The assembly process for the Shactuator was significantly simplified by its modu
 <p align="center">
   <img src="MEDIA/ASSEMBLY_1.jpg" alt="Initial Assembly Phase" width="500">
   <br>
-  <em>Figure 9: Initial assembly phase, showing the integration of the main bearing into the housing, highlighting the wooden rod used for stability during early tests.</em>
+  <em>Figure 10: Initial assembly phase, with a 1" OD wooden rod used for later stage tests.</em>
 </p>
 
 <p align="center">
   <img src="MEDIA/ASSEMBLY_2.jpg" alt="Planetary Carrier Insertion" width="500">
   <br>
-  <em>Figure 10: Assembling the planetary carrier subassembly into the main housing, showcasing the helical planet gears.</em>
+  <em>Figure 11: Assembling the planetary carrier subassembly into the main housing, showcasing the helical planet gears.</em>
 </p>
 
 <p align="center">
   <img src="MEDIA/ASSEMBLY_3.jpg" alt="Actuator Assembly with Wooden Rod" width="500">
   <br>
-  <em>Figure 11: The actuator assembly with the wooden rod fully integrated, demonstrating the early testing setup.</em>
+  <em>Figure 12: The actuator assembly with the wooden rod fully integrated, demonstrating the early testing setup.</em>
 </p>
 
 ## Electronics & Control Setup
