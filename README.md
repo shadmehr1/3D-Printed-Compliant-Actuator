@@ -5,7 +5,7 @@ A compact, high-performance open-source actuator for advanced robotics, designed
 
 
 <p align="center">
-  <img src="MEDIA/SHACTUATOR_EXPL.png" alt="SHACTUATOR Exploded View" width="700">
+  <img src="MEDIA/SHACTUATOR_EXPL.png" alt="SHACTUATOR Exploded View" width="1000">
   <br>
   <em>Figure 1: An exploded view of the SHACTUATOR, illustrating its main components and their arrangement.</em>
 </p>
