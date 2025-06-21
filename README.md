@@ -33,7 +33,7 @@ A compact, high-performance open-source actuator for advanced robotics, designed
     * [Backlash Evaluation](#backlash-evaluation)
 * [Challenges & Lessons Learned](#challenges--lessons-learned)
     * [Power Supply Limitations](#power-supply-limitations)
-    * [Material Strain](#material-strain)
+    * [Design For Limit Testing](#design-for-limit-testing)
 * [Future Improvements](#future-improvements)
 
 ---
@@ -132,7 +132,7 @@ The Shactuator consists of 4 main assemblies that slip together for streamlined 
   <em>Figure 6: The Planet Carrier Subassembly, showing the arrangement of planet gears, 3x M5 dowel pins, and 3x 5mm ID, 16mm OD bearings, crucial for smooth planetary motion.</em>
 </p>
 
-* **Planetary Carriers** : This subassembly houses the planet gears. It incorporates steel dowel pins and small roller bearings alongside the gears, ensuring smooth and efficient power transmission. 
+**Planetary Carriers** : This subassembly houses the planet gears. It incorporates steel dowel pins and small roller bearings alongside the gears, ensuring smooth and efficient power transmission. 
 </p>
 
 <p align="center">
@@ -249,7 +249,7 @@ Rigorous testing was conducted to characterize the Shactuator's performance acro
 <p align="center">
   <img src="MEDIA/TORQUE_RESULTS.png" alt="Torque vs Current Limit" width="700">
   <br>
-  <em>Figure 17: Torque vs Current Limit graph, comparing measured performance against projected linear behavior, highlighting the onset of losses at higher current thresholds, consistent with [existing motor torque literature](https://www.controleng.ca/servosoft/SSHelp1033/source/MotorTorqueVsCurrent.htm).</em>
+  <em>Figure 17: Torque vs Current Limit graph, comparing measured performance against projected linear behavior, highlighting the onset of losses at higher current thresholds, consistent with existing literature. </em>
 </p>
 
 
