@@ -231,7 +231,7 @@ Rigorous testing was conducted to characterize the Shactuator's performance acro
 * **Expected:** Using the motor speed and current, I used a given formula found in a textbook to calculate the expected torque of brushless DC motors. Thus, at 20A, I was expecting **11.68 ft-lbs**.
 
 <p align="center">
-  <img src="MEDIA/MOTOR_TORQUE_CALC.JPEG" alt="Motor Torque Calculation" width="500">
+  <img src="MEDIA/MOTOR_TORQUE_CALC.JPEG" alt="Motor Torque Calculation" width="800">
   <br>
   <em>Figure 15: Detailed motor torque calculations, including the derivation of the torque constant (kt) and the final actuator torque, incorporating an assumed 80% efficiency for the system.</em>
 </p>
@@ -246,7 +246,7 @@ Rigorous testing was conducted to characterize the Shactuator's performance acro
 </p>
 
 <p align="center">
-  <img src="MEDIA/TORQUE_RESULTS.png" alt="Torque vs Current Limit" width="500">
+  <img src="MEDIA/TORQUE_RESULTS.png" alt="Torque vs Current Limit" width="700">
   <br>
   <em>Figure 17: Torque vs Current Limit graph, comparing measured performance against projected linear behavior, highlighting the onset of losses at higher current thresholds, consistent with [existing motor torque literature](https://www.controleng.ca/servosoft/SSHelp1033/source/MotorTorqueVsCurrent.htm).</em>
 </p>
@@ -258,13 +258,13 @@ Rigorous testing was conducted to characterize the Shactuator's performance acro
 * **Results:** Across all tested torque setups, the Shactuator proved to be backdrivable, meaning it could be moved by external forces. Furthermore, it demonstrated excellent damping characteristics after careful tuning of the ODrive controller's gains. As anticipated, backdriving was significantly easier at lower torque settings. This outcome was highly satisfactory, as it successfully proved the actuator's compliance, making it a strong candidate for applications requiring compliant joints, such as a robotic dog.
 
 <p align="center">
-  <img src="MEDIA/7FTLB_COMPLIANCE.gif" alt="Compliance at 7ft-lbs" width="600">
+  <img src="MEDIA/7FTLB_COMPLIANCE.gif" alt="Compliance at 7ft-lbs" width="400">
   <br>
   <em>Figure 18: The actuator's compliance when set to exert 7ft-lbs.</em>
 </p>
 
 <p align="center">
-  <img src="MEDIA/15FTLB_COMPLIANCE.gif" alt="Compliance at 7ft-lbs" width="600">
+  <img src="MEDIA/15FTLB_COMPLIANCE.gif" alt="Compliance at 7ft-lbs" width="400">
   <br>
   <em>Figure 19: The Shactuator's compliance when set to exert 15ft-lbs.</em>
 </p>
