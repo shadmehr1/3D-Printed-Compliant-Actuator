@@ -128,14 +128,14 @@ The SHACTUATOR consists of 4 main assemblies that slip together for streamlined 
       <em>Figure 6: The Housing component, which functions as the ring gear and actuator shroud, showing its internal helical gear teeth and integrated cooling provisions.</em>
     </p>
 
-* **Planetary Carriers:** This subassembly houses the planet gears. It incorporates steel dowel pins and small roller bearings alongside the gears, ensuring smooth and efficient power transmission. A key assembly note is that you must add pause a pause to your 3D print program such that you can press fit the bearings in and allow for the print to continue around them.
+* **Planetary Carriers:** This subassembly houses the planet gears. It incorporates steel dowel pins and small roller bearings alongside the gears, ensuring smooth and efficient power transmission. 
     <p align="center">
       <img src="MEDIA/CARRIER_ASSY.png" alt="Planet Carrier Subassembly" width="800">
       <br>
       <em>Figure 7: The Planet Carrier Subassembly, showing the arrangement of planet gears, 3x M5 dowel pins, and 3x 5mm ID, 16mm OD bearings, crucial for smooth planetary motion.</em>
     </p>
 
-* **Motor Subassembly:** This assembly integrates the EaglePower brushless motor with the **sun gear**. The motor is securely attached to a back plate, which also provides mounting provisions for the ODrive S1 controller. Precise positioning of the ODrive is essential to ensure optimal alignment with the onboard encoder and magnet for accurate position feedback.
+* **Motor Subassembly:** This assembly integrates the EaglePower brushless motor with the **sun gear**. The motor is securely attached to a back plate, which also provides mounting provisions for the ODrive S1 controller (and its onboard encoder). Precise positioning of the ODrive is essential to ensure optimal alignment with the onboard encoder and magnet for accurate position feedback.
     <p align="center">
       <img src="MEDIA/MOTOR_ASSY.png" alt="Motor Subassembly" width="800">
       <br>
@@ -144,53 +144,45 @@ The SHACTUATOR consists of 4 main assemblies that slip together for streamlined 
 
 ### Design Notes
 
-* The actuator's modular design, composed of 4 main slip-on assemblies, enhances ease of construction and maintenance.
-* Variations for different end effectors were included in the design, streamlining testing procedures and minimizing potential error sources.
+* Variations for different end effectors were used in the design process, streamlining testing procedures and minimizing potential error sources. I uploaded the CAD with a slot for 1" Rod for your testing and validation purposes.
 * The actuator housing integrates passive cooling holes to help manage heat during operation.
-* The ODrive S1 controller's mounting provisions are carefully designed to ensure the critical 0.5-3mm spacing from the motor's magnet for reliable onboard encoder operation.
+* The ODrive S1 controller's mounting provisions are carefully designed to ensure the critical 0.5-3mm spacing from the motor's magnet for reliable onboard encoder operation. More on this below.
 
 ## Manufacturing & 3D Printing Notes
 
 Utilizing FDM 3D printing for the SHACTUATOR's components brought both advantages and specific considerations:
 
-* **Slip-Fit Tolerances:** When designing circular slip-fit parts, such as bearing seats on 3D printed components, it was observed that oversizing the printed part by **1-2%** generally yields an optimal interference fit. This helps compensate for common 3D printing dimensional inaccuracies and ensures secure seating of components.
+* **Press-Fit Tolerances:** When designing circular press-fit parts, such as bearing seats on 3D printed components, I noticed that oversizing the printed part by **1-2%** generally yields an optimal interference fit. This helps compensate for common 3D printing dimensional inaccuracies and ensures secure seating of components.
 * **Mid-Print Bearing Insertion:** For the planetary carriers, a unique assembly step was required: the 3D print had to be paused partway through its fabrication to allow for the precise insertion of the small roller bearings. This ensures the bearings are fully encapsulated within the printed structure.
 
-## Assembly
-
-The assembly process for the SHACTUATOR was significantly simplified by its modular design, allowing for a logical and systematic integration of components.
-
-*Key Assembly Note: Add pause a pause to your gear 3D print program such that you can press fit the bearings in and allow for the print to continue around the gear body.*
-
 <p align="center">
-  <img src="MEIDA/BEARING_PRINT.png" alt="Press Fit Bearings during 3D Print" width="600">
+  <img src="MEDIA/BEARING_PRINT.jpg" alt="Press Fit Bearings during 3D Print" width="500">
   <br>
   <em>Figure 9: Key Assembly Note: Press Fitting the radial bearings into the gears mid-print.
 .</em>
 </p>
 
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
-  <div style="text-align: center;">
-    <img src="MEDIA/ASSEMBLY_1.jpg" alt="Initial Assembly Phase" style="width: 100%; max-width: 200px; height: auto;">
-    <br>
-    <em>Figure 9: Initial assembly phase, showing the integration of the main bearing into the housing, highlighting the wooden rod used for stability during early tests.</em>
-  </div>
-  <div style="text-align: center;">
-    <img src="MEDIA/ASSEMBLY_2.jpg" alt="Planetary Carrier Insertion" style="width: 100%; max-width: 200px; height: auto;">
-    <br>
-    <em>Figure 10: Assembling the planetary carrier subassembly into the main housing, showcasing the helical planet gears.</em>
-  </div>
-  <div style="text-align: center;">
-    <img src="MEDIA/ASSEMBLY_3.jpg" alt="Actuator Assembly with Wooden Rod" style="width: 100%; max-width: 200px; height: auto;">
-    <br>
-    <em>Figure 11: The actuator assembly with the wooden rod fully integrated, demonstrating the early testing setup.</em>
-  </div>
-  <div style="text-align: center;">
-    <img src="MEDIA/ASSEMBLY_4.jpg" alt="Motor and ODrive Integration" style="width: 100%; max-width: 200px; height: auto;">
-    <br>
-    <em>Figure 12: Integrating the motor and ODrive controller into the actuator housing, completing the core electromechanical assembly.</em>
-  </div>
-</div>
+## Assembly
+
+The assembly process for the SHACTUATOR was significantly simplified by its modular design, allowing for a logical and systematic integration of components.
+
+<p align="center">
+  <img src="MEIDA/ASSEMBLY_1.jpg" alt="Initial Assembly Phase" width="500">
+  <br>
+  <em>Figure 9: Initial assembly phase, showing the integration of the main bearing into the housing, highlighting the wooden rod used for stability during early tests.</em>
+</p>
+
+<p align="center">
+  <img src="MEDIA/ASSEMBLY_2.jpg" alt="Planetary Carrier Insertion" width="500">
+  <br>
+  <em>Figure 10: Assembling the planetary carrier subassembly into the main housing, showcasing the helical planet gears.</em>
+</p>
+
+<p align="center">
+  <img src="MEDIA/ASSEMBLY_3.jpg" alt="Actuator Assembly with Wooden Rod" width="500">
+  <br>
+  <em>Figure 11: The actuator assembly with the wooden rod fully integrated, demonstrating the early testing setup.</em>
+</p>
 
 ## Electronics & Control Setup
 
@@ -213,7 +205,7 @@ Optimal performance of the SHACTUATOR was achieved through careful tuning of the
 * **Velocity Integrator Gain:** 0.05 (Nm/s)/(rev/s)
 
 <p align="center">
-  <img src="MEDIA/image_5c3ca7.png" alt="ODrive Dashboard Tuning" width="700">
+  <img src="MEDIA/TUNE_ODRIVE.png" alt="ODrive Dashboard Tuning" width="700">
   <br>
   <em>Figure 14: Screenshot of the ODrive Dashboard showing the configured PID gain values (Position, Velocity, and Velocity Integrator Gain) and the resultant position, velocity, and current damping curves during testing.</em>
 </p>
