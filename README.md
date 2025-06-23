@@ -103,6 +103,8 @@ The Shactuator's mechanical design emphasizes modularity, enabling ease of assem
   <em>Figure 3: The fully assembled Shactuator, showcasing its compact form factor and integrated design.</em>
 </p>
 
+*My design is based off the OpenTorque Actuator [Open Torque Actuator](https://www.gabrael.io/new-page) by Gabrael Levine. Much credit to him and his early lessons.*
+
 ### Overall Assembly
 
 The Shactuator consists of 4 main assemblies that slip together for streamlined integration and maintenance.
@@ -199,14 +201,38 @@ The assembly process for the Shactuator was significantly simplified by its modu
 
 ## Electronics & Control Setup
 
-The Shactuator's intelligent control is handled by the **ODrive S1 Controller**, which precisely manages the EaglePower brushless motor. For position feedback, the motor leverages its onboard encoder in conjunction with a 6mm Neodymium magnet. Crucially, the [ODrive Technical Specification](https://docs.odriverobotics.com/v/latest/articles/magnetic-encoders.html#design-consideration) recommends maintaining a spacing of **0.5 to 3mm** between the top surface of the encoder IC and the magnet for optimal performance and signal integrity.
+The Shactuator's intelligent control is handled by the **ODrive S1 Controller**, which precisely manages the EaglePower brushless motor. Follow the schematic below to wire up the ODrive. Note that the three wires can be connected to either the A, B, or C pins on the ODrive as they are agnostic.
+<p align="center">
+  <img src="MEDIA/SCHEMATIC.jpeg" alt="Schematic" width="500">
+  <br>
+  <em>Figure 13: Connect the the ODrive S1 as shown above.</em>
+</p>
+
+For position feedback, the motor leverages its onboard encoder in conjunction with a 6mm Neodymium magnet. Crucially, the [ODrive Technical Specification](https://docs.odriverobotics.com/v/latest/articles/magnetic-encoders.html#design-consideration) recommends maintaining a spacing of **0.5 to 3mm** between the top surface of the encoder IC and the magnet for optimal performance and signal integrity.
 
 <p align="center">
   <img src="MEDIA/MAGNET_DISTANCE.png" alt="Encoder Magnet Spacing" width="500">
   <br>
-  <em>Figure 13: The spaceing between the top surface of the onboard encoder and the face of the magnet should be 0.5 - 3mm for optimal position sensing.</em>
+  <em>Figure 14: The spaceing between the top surface of the onboard encoder and the face of the magnet should be 0.5 - 3mm for optimal position sensing.</em>
 </p>
 </p>
+Once the ODrive is plugged into the test PC, a notification will pop up to confirm connection. Clicking on that will take you to the ODrive Dashboard. Follow the steps of [this walkthrough video](https://youtu.be/mMkTYRGXYdI?si=sjHg5u1Ue_J5zW3i&t=807) by Kevin Wood to calibrate the ODrive, motor and onboard encoder. Some notes to help guide you as you complete these steps:
+
+**Power Source:**  
+- Set your power supply to 24V.  
+- Set `DC Bus overvoltage trip level` to 30V for safety.
+
+**Motor:**  
+- Select `Other Motor` and input specs  
+- Pole Pairs: 20 (Motor has 40 magnets, thus 20 pole pairs)  
+- KV: 90  
+- Current Limit: 10. You can play with this later to alter how much torque your actuator exerts. The continuous limit is 22A; above that the motor will quickly overheat. If your power supply is weak, it will also “crap out” after a few seconds.  
+- No Thermistor
+
+**Encoder:**  
+- Select `Onboard Encoder` 
+
+
 During the testing and tuning phases, control was exclusively managed via the **ODrive Dashboard**. This intuitive graphical user interface allowed for direct setting of motor positions, velocities, or torques, eliminating the need for custom coding to conduct performance assessments.
 
 ### ODrive Tuning
@@ -220,7 +246,7 @@ Optimal performance of the Shactuator was achieved through careful tuning of the
 <p align="center">
   <img src="MEDIA/TUNE_ODRIVE.png" alt="ODrive Dashboard Tuning" width="600">
   <br>
-  <em>Figure 14: Screenshot of the ODrive Dashboard showing the configured PID gain values (Position, Velocity, and Velocity Integrator Gain) and the resultant position, velocity, and current damping curves during testing.</em>
+  <em>Figure 15: Screenshot of the ODrive Dashboard showing the configured PID gain values (Position, Velocity, and Velocity Integrator Gain) and the resultant position, velocity, and current damping curves during testing.</em>
 </p>
 
 ## Testing & Performance
@@ -233,7 +259,7 @@ Rigorous testing was conducted to characterize the Shactuator's performance acro
 <p align="center">
   <img src="MEDIA/MOTOR_TORQUE_CALC.JPEG" alt="Motor Torque Calculation" width="800">
   <br>
-  <em>Figure 15: Detailed motor torque calculations, including the derivation of the torque constant (kt) and the final actuator torque, incorporating an assumed 80% efficiency for the system.</em>
+  <em>Figure 16: Detailed motor torque calculations, including the derivation of the torque constant (kt) and the final actuator torque, incorporating an assumed 80% efficiency for the system.</em>
 </p>
 </p>
 
@@ -243,13 +269,13 @@ Rigorous testing was conducted to characterize the Shactuator's performance acro
 <p align="center">
   <img src="MEDIA/MAX_TORQUE.gif" alt="Max Torque Test" width="500">
   <br>
-  <em>Figure 16: The actuator's maximum torque output was assessed using a handheld force gauge at a marked distance from the actuator's rotation axis. </em>
+  <em>Figure 17: The actuator's maximum torque output was assessed using a handheld force gauge at a marked distance from the actuator's rotation axis. </em>
 </p>
 
 <p align="center">
   <img src="MEDIA/TORQUE_RESULTS.png" alt="Torque vs Current Limit" width="700">
   <br>
-  <em>Figure 17: Torque vs Current Limit graph, comparing measured performance against projected linear behavior, highlighting the onset of losses at higher current thresholds, consistent with existing literature. </em>
+  <em>Figure 18: Torque vs Current Limit graph, comparing measured performance against projected linear behavior, highlighting the onset of losses at higher current thresholds, consistent with existing literature. </em>
 </p>
 
 
@@ -261,13 +287,13 @@ Rigorous testing was conducted to characterize the Shactuator's performance acro
 <p align="center">
   <img src="MEDIA/7FTLB_COMPLIANCE.gif" alt="Compliance at 7ft-lbs" width="400">
   <br>
-  <em>Figure 18: The actuator's compliance when set to exert 7ft-lbs.</em>
+  <em>Figure 19: The actuator's compliance when set to exert 7ft-lbs.</em>
 </p>
 
 <p align="center">
   <img src="MEDIA/15FTLB_COMPLIANCE.gif" alt="Compliance at 7ft-lbs" width="400">
   <br>
-  <em>Figure 19: The Shactuator's compliance when set to exert 15ft-lbs.</em>
+  <em>Figure 20: The Shactuator's compliance when set to exert 15ft-lbs.</em>
 </p>
 
 ### Speed Tests
@@ -299,7 +325,7 @@ An early design hurdle emerged at around 15A during torque tests: the PLA printe
 <p align="center">
   <img src="MEDIA/VICE_FAIL.gif" alt="Vice-Fail" width="400">
   <br>
-  <em>Figure 20: Clamps slipping and failing when I using an earlier revision of the Shactuator. I redesigned the end effector and the housing to accomodate for high load testing.</em>
+  <em>Figure 21: Clamps slipping and failing when I using an earlier revision of the Shactuator. I redesigned the end effector and the housing to accomodate for high load testing.</em>
 </p>
 
 ## Future Improvements
