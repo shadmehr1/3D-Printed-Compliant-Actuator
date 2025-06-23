@@ -216,9 +216,8 @@ For position feedback, the motor leverages its onboard encoder in conjunction wi
   <em>Figure 14: The spaceing between the top surface of the onboard encoder and the face of the magnet should be 0.5 - 3mm for optimal position sensing.</em>
 </p>
 </p>
-Once the ODrive is plugged into the test PC, a notification will pop up to confirm connection. Clicking on that will take you to the ODrive Dashboard. Follow the steps of 
 
-[this walkthrough video](https://www.youtube.com/watch?v=mMkTYRGXYdI&t=807) by Kevin Wood to calibrate the ODrive, motor and onboard encoder. Some notes to help guide you as you complete these steps:
+Once the ODrive is plugged into the test PC, a notification will pop up to confirm connection. Clicking on that will take you to the ODrive Dashboard. Follow the steps of [this walkthrough video](https://www.youtube.com/watch?v=mMkTYRGXYdI&t=807) by Kevin Wood to calibrate the ODrive, motor and onboard encoder. Some notes to help guide you as you complete these steps:
 
 **Power Source:**  
 - Set your power supply to 24V.  
