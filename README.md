@@ -203,7 +203,7 @@ The assembly process for the Shactuator was significantly simplified by its modu
 
 The Shactuator's intelligent control is handled by the **ODrive S1 Controller**, which precisely manages the EaglePower brushless motor. Follow the schematic below to wire up the ODrive. Note that the three wires can be connected to either the A, B, or C pins on the ODrive as they are agnostic.
 <p align="center">
-  <img src="MEDIA/SCHEMATIC.jpeg" alt="Schematic" width="500">
+  <img src="MEDIA/SHEMATIC.JPEG" alt="Schematic" width="800">
   <br>
   <em>Figure 13: Connect the the ODrive S1 as shown above.</em>
 </p>
@@ -216,7 +216,7 @@ For position feedback, the motor leverages its onboard encoder in conjunction wi
   <em>Figure 14: The spaceing between the top surface of the onboard encoder and the face of the magnet should be 0.5 - 3mm for optimal position sensing.</em>
 </p>
 </p>
-Once the ODrive is plugged into the test PC, a notification will pop up to confirm connection. Clicking on that will take you to the ODrive Dashboard. Follow the steps of [this walkthrough video](https://youtu.be/mMkTYRGXYdI?si=sjHg5u1Ue_J5zW3i&t=807) by Kevin Wood to calibrate the ODrive, motor and onboard encoder. Some notes to help guide you as you complete these steps:
+Once the ODrive is plugged into the test PC, a notification will pop up to confirm connection. Clicking on that will take you to the ODrive Dashboard. Follow the steps of [this walkthrough video](https://www.youtube.com/watch?v=mMkTYRGXYdI) by Kevin Wood to calibrate the ODrive, motor and onboard encoder. Some notes to help guide you as you complete these steps:
 
 **Power Source:**  
 - Set your power supply to 24V.  
@@ -229,8 +229,7 @@ Once the ODrive is plugged into the test PC, a notification will pop up to confi
 - Current Limit: 10. You can play with this later to alter how much torque your actuator exerts. The continuous limit is 22A; above that the motor will quickly overheat. If your power supply is weak, it will also “crap out” after a few seconds.  
 - No Thermistor
 
-**Encoder:**  
-- Select `Onboard Encoder` 
+**Encoder:**  Select `Onboard Encoder` 
 
 
 During the testing and tuning phases, control was exclusively managed via the **ODrive Dashboard**. This intuitive graphical user interface allowed for direct setting of motor positions, velocities, or torques, eliminating the need for custom coding to conduct performance assessments.
