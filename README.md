@@ -1,7 +1,7 @@
 # 3D Printed Compliant Actuator
 **Referred to as *The Shactuator* in select remote regions of the world.**
 
-A compact, high-performance open-source actuator for advanced robotics, designed and built to explore fundamental principles of electronics, motors, and gearboxes for applications like the humanoids and robotic dogs.
+A compact, high-performance open-source actuator for humanoids and robotic dogs. Designed and built to explore fundamental principles of electronics, motors, and gearboxes.
 
 <p align="center">
   <img src="MEDIA/SHACTUATOR_EXPL.png" alt="Shactuator Exploded View" width="1000">
