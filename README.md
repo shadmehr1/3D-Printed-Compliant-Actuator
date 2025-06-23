@@ -40,7 +40,7 @@ A compact, high-performance open-source actuator for advanced robotics, designed
 
 ## Introduction
 
-This project explores the design and fabrication of a custom, high-torque-density actuator, dubbed the "Shactuator," leveraging a 3D printed gearbox, and low cost brushless DC motors, and a an ODrive motor controllerr. My distant goal is to build a robtoic dog or humanoid, but you can't do that without validating an actuator design. Naturally, that led me to design and construct our my actuators to deepen my understanding of electronics, motors, and gearboxes. By getting my hands dirty with these foundational elements of applied robotics, I aimed to gain a comprehensive understanding of the root components essential for millions of applications.
+This project explores the design and fabrication of a custom, high-torque-density actuator, dubbed the "Shactuator," leveraging a 3D printed gearbox, and low cost brushless DC motors, and a an ODrive motor controllerr. My distant goal is to build a robtoic dog or humanoid, but you can't do that without validating an actuator design. Naturally, that led me to design and build this actuator to deepen my understanding of electronics, motors, and gearboxes. By getting my hands dirty with these foundational elements of applied robotics, I aimed to gain a comprehensive understanding of the root components essential for millions of applications.
 
 ## Project Goals & Requirements
 
@@ -53,7 +53,7 @@ The development of the Shactuator was guided by several key objectives:
 
 ## Design Philosophy: Gearbox Selection
 
-When embarking on the design of a custom actuator, selecting the appropriate gearbox type is paramount. I considered three primary options: Planetary, Cycloidal, and Harmonic drives, each with its unique trade-offs in terms of performance, complexity, and manufacturability. To justify my decision, I conducted a weighted trade study:
+When embarking on the design of a custom actuator, selecting the appropriate gearbox type is paramount. I considered three primary options: Planetary, Cycloidal, and Harmonic drives, each with its unique trade-offs in terms of performance, complexity, and manufacturability. To justify my decision, I conducted aighted trade study:
 
 | Criterion              | Harmonic                               | Planetary                          | Cycloidal                          | Notes                                           |
 | :--------------------- | :------------------------------------- | :--------------------------------- | :--------------------------------- | :---------------------------------------------- |
@@ -148,7 +148,7 @@ The CAD models (STP files) for the Shactuator, including all assemblies and indi
 
 ### Design Notes
 
-* Variations for different end effectors were used in the design process, streamlining testing procedures and minimizing potential error sources. I uploaded the CAD with a slot for 1" Rod for your testing and validation purposes.
+* Variations for different end effectorsre used in the design process, streamlining testing procedures and minimizing potential error sources. I uploaded the CAD with a slot for 1" Rod for your testing and validation purposes.
 * The actuator housing integrates passive cooling holes to help manage heat during operation.
 * The ODrive S1 controller's mounting provisions are carefully designed to ensure the critical 0.5-3mm spacing from the motor's magnet for reliable onboard encoder operation. More on this below.
   
@@ -255,7 +255,7 @@ Rigorous testing was conducted to characterize the Shactuator's performance acro
 
 ### Compliance & Backdrivability
 
-* **Methodology:** The actuator's inherent compliance and backdrivability were qualitatively tested at various torque ratings: 4, 7.5, and 14 ft-lb.
+* **Methodology:** The actuator's inherent compliance and backdrivabilityre qualitatively tested at various torque ratings: 4, 7.5, and 14 ft-lb.
 * **Results:** Across all tested torque setups, the Shactuator proved to be backdrivable, meaning it could be moved by external forces. Furthermore, it demonstrated excellent damping characteristics after careful tuning of the ODrive controller's gains. As anticipated, backdriving was significantly easier at lower torque settings. This outcome was highly satisfactory, as it successfully proved the actuator's compliance, making it a strong candidate for applications requiring compliant joints, such as a robotic dog.
 
 <p align="center">
@@ -277,7 +277,7 @@ Rigorous testing was conducted to characterize the Shactuator's performance acro
 
 ### Continuous Torque Test
 
-* **Methodology:** To assess the actuator's ability to sustain torque over time, a continuous torque test was devised. Given the motor's specified continuous current limit of 22A, which translates to approximately 10 ft-lbs from our torque graph, a 5lb dumbbell was attached to a weighted band. The Shactuator then performed a series of "robot curls" to evaluate its endurance under continuous load. It showed no signs of performance degredation after 1 minute of operation. <br>
+* **Methodology:** To assess the actuator's ability to sustain torque over time, a continuous torque test was devised. Given the motor's specified continuous current limit of 22A, I measured to give 10 ft-lbs (see graph above), a 5lb dumbbell was attached to a weighted band. The Shactuator then performed a series of "robot curls" to evaluate its endurance under continuous load. It showed no signs of performance degredation after 1 minute of operation. <br>
 **NOTE**: A house fan was used in this operation as a safety measure to stir the air.
 
 ### Backlash Evaluation
@@ -311,4 +311,4 @@ Based on the insights gained from this project, several avenues for future impro
 * **Reduce Backlash:** A key improvement for future revisions will involve increasing the preload in the gear teeth. This mechanical adjustment is expected to significantly reduce the observed backlash, leading to more precise motion control.
 * **Enhanced Power Supply:** To fully unlock the EaglePower motor's potential and conduct comprehensive testing beyond 35A, investing in a higher-capacity power supply is a priority.
 * **Advanced Control & Thermal Management:** While good damping was achieved, exploring more sophisticated control strategies could further optimize performance. Additionally, integrating a thermistor for continuous temperature monitoring would provide crucial data for thermal management, especially under sustained high-torque operation.
-* **Quantitative Data Collection:** Implementing dedicated instrumentation, such as strain gauges, would enable the quantitative measurement of compliance and backlash, providing precise performance metrics that were not achievable in this phase.
+* **Quantitative Data Collection:** Implementing dedicated instrumentation, such as strain gauges, would enable the quantitative measurement of compliance and backlash, providing precise performance metrics thatre not achievable in this phase.
